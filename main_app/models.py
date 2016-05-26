@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 # Create your models here.
 
@@ -34,4 +35,6 @@ class TestSkill(models.Model):
 
 class TestTask(models.Model):
     task_name = models.CharField(max_length = 200);
+    task_descriptino = models.TextField(max_length = 10000, default = "")
     task_id = models.IntegerField(default=0);
+    pub_date = models.DateTimeField('date published', default = datetime.datetime.now())
