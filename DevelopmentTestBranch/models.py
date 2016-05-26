@@ -1,6 +1,12 @@
 from django.db import models
 
 # Create your models here.
+
+'try to do one-to-one relation'
+class TestUserProfile(models.Model):
+    user_profile_university = models.CharField(max_length = 200)
+
+
 class TestUser(models.Model):
     user_first_name = models.CharField(max_length = 200);
     user_last_name = models.CharField(max_length = 200);
@@ -12,11 +18,7 @@ class TestUser(models.Model):
     user_email = models.CharField(max_length = 200);
     user_phone = models.CharField(max_length = 200);
 
-    user_profile = models.OneToOneField(
-        TestUserProfile,
-        on_delete = models.CASCADE,
-        primary_key = True
-    )
+    user_profile = models.ForeignKey(TestUserProfile, on_delete=models.CASCADE)
 
 
 
@@ -35,6 +37,3 @@ class TestTask(models.Model):
     task_id = models.IntegerField(default=0);
 
 
-'try to do one-to-one relation'
-class TestUserProfile(models.Model):
-    user_profile_university = models.CharField(max_length = 200)
