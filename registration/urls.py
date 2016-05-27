@@ -3,5 +3,5 @@ from django import contrib
 from . import views
 
 urlpatterns = [
-    url(r'^registration/', views.login_view, name='registration'),
+    url(r'^authentification/', views.auth_view, name='authentification')
 ]
