@@ -13,3 +13,7 @@ def index(request):
 def task(request, task_id):
     task = get_object_or_404(TestTask, pk=task_id)
     return render(request, 'main_app/task.html', {'task': task})
+
+def skill(request, skill_name):
+    skill = get_object_or_404(TestSkill, skill_name=skill_name)
+    return render(request, 'main_app/skill.html', {'skill': skill})

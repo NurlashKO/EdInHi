@@ -30,6 +30,7 @@ class TestProfession(models.Model):
 
 class TestSkill(models.Model):
     skill_name = models.CharField(max_length = 200);
+    skill_description = models.TextField(max_length = 500)
 
 
 
