@@ -1,0 +1,25 @@
+{%extends 'main_app/base.html' %}
+{% block title %}
+    Log in
+{% endblock%}
+
+{% block content %}
+<br><br><br><br><br>
+<div class="row">
+    <div class="col-sm-offset-4 col-sm-4">
+        <form role="form">
+      <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" id="email">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd">
+      </div>
+      <button type="submit" class="btn btn-info">Log in</button> &nbsp or &nbsp
+      <a href="{% url "reg" %}">Sign up</a>
+    </form>
+    </div>
+</div>
+<br><br>
+{% endblock %}

@@ -13,3 +13,11 @@ def index(request):
 def task(request, task_id):
     task = get_object_or_404(TestTask, pk=task_id)
     return render(request, 'main_app/task.html', {'task': task})
+
+def auth(request):
+    template = loader.get_template('main_app/auth.html')
+    return HttpResponse(template.render({}, request))
+
+def reg(request):
+    template = loader.get_template('main_app/reg.html')
+    return HttpResponse(template.render({}, request))

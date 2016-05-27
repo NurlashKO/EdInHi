@@ -1,0 +1,51 @@
+.divider {
+    height:50px;
+}
+
+section {
+    height:500px;
+    padding-top:50px;
+    padding-bottom:50px;
+    overflow:auto;
+}
+
+.bg-1 {
+	background: url('../images/bg2_blur.jpg') no-repeat center center fixed;
+    background-position: 50% 0px;
+    filter: blur(5px);
+    color:#fff;
+    background-size:cover;
+}
+
+
+.bg-2 {
+	background: url('../images/bg2_blur.jpg') no-repeat top center fixed;
+    color:#fff;
+    background-size:cover;
+}
+
+.bg-content {
+	padding-top: 10%;
+	text-shadow: 0.5px 0.7px rgba(0, 0, 0, 0.7);
+}
+
+.bg-content h1 {
+	font-size: 80px;
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+}
+
+.bg-content p {
+	font-family:  Geneva, Tahoma, Verdana, sans-serif;
+}
+
+.reg_link {
+	font-size: 30px;
+	width: 100%;
+	padding: 5%;
+}
+
+.info .text-center {
+	font-size: 50px;
+	padding-top: 5%;
+	padding-bottom: 3%;
+}
