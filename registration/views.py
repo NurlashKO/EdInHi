@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login
 # Create your views here.
 
 
-def login_view(request):
+def auth_view(request):
     if (request.method == "POST"):
         email = request.POST['email']
         password = request.POST['password']
@@ -12,4 +12,5 @@ def login_view(request):
         if user is not None:
             login(request, user)
             return redirect("index")
-    return redirect("registration")
+    return render(request, "main_app/auth.html")
+
