@@ -1,2 +1,0 @@
-# EdInHi
-edinhi.herokuapp.com
