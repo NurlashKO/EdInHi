@@ -6,9 +6,12 @@ from .models import *
 # Create your views here.
 
 def index(request):
+    autharized = False
+    if (request.user.is_authenticated()):
+        autharized = True
     latest_task_list = TestTask.objects.order_by('-pub_date')[:5]
     template = loader.get_template('main_app/index.html')
-    return HttpResponse(template.render({'task_list': latest_task_list}, request))
+    return HttpResponse(template.render({'autharized': autharized, 'task_list': latest_task_list}, request))
 
 def task(request, task_id):
     task = get_object_or_404(TestTask, pk=task_id)
