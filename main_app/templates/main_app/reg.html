@@ -1,30 +1,43 @@
-{%extends 'main_app/base.html' %}
+{% extends 'main_app/base.html' %}
+{% load staticfiles %}
+<link href="js/https://code.jquery.com/jquery-2.2.4.min.js" rel="script" type="text/javascript">
 {% block title %}
     EdInHi
-{% endblock%}
-
+{% endblock %}
+<script>
+    function Validate() {
+        alert("You're done");
+        console.log("we're done");
+        return false;
+    }
+</script>
 {% block content %}
-<br><br><br><br><br>
-<div class="row">
-    <div class="col-sm-offset-4 col-sm-4">
-        <form role="form" method="POST">
-            {% csrf_token %}
-      <div class="form-group">
-        <label for="email">Email address:</label>
-          <input name="email" type="email" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input name="password" type="password" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="pwd">Re-password:</label>
-        <input type="password" class="form-control">
-      </div>
-      <button type="submit" class="btn btn-info">Sign Up</button> &nbsp or &nbsp
-      <a href="{% url "index" %}" class="btn btn-default">Back</a>
-    </form>
+    <br><br><br><br><br>
+    <div class="row">
+        <div class="col-sm-offset-4 col-sm-4">
+            <form role="form" onsubmit="return Validate();" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input name="email" type="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input name="password" type="password" class="form-control" required
+                           id="inputPassword" data-match-error="Whoops, these don't match">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Re-password:</label>
+                    <input type="password" data-match="#inputPassword" class="form-control" required data-minlength="6">
+                </div>
+                <button type="submit"  class="btn btn-info">Sign Up</button>
+                &nbsp or &nbsp
+                <a href="{% url "index" %}" class="btn btn-default">Back</a>
+            </form>
+        </div>
     </div>
-</div>
-<br><br>
-{% endblock%}s
+    <br><br>
+{% endblock %}
+<script>
+
+</script>
