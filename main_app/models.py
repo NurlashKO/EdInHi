@@ -1,9 +1,11 @@
 from django.db import models
-import datetime
+from django.contrib.auth.models import User
+from django.utils import timezone
 
 # Create your models here.
 
 'try to do one-to-one relation'
+
 class TestUserProfile(models.Model):
     user_profile_university = models.CharField(max_length = 200)
 
@@ -37,4 +39,15 @@ class TestTask(models.Model):
     task_name = models.CharField(max_length = 200);
     task_descriptino = models.TextField(max_length = 10000, default = "")
     task_id = models.IntegerField(default=0);
-    pub_date = models.DateTimeField('date published', default = datetime.datetime.now())
+    pub_date = models.DateTimeField('date published', default = timezone.now())
+
+
+class AbstractUser(models.Model):
+    # MAIN
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    phone = models.CharField(max_length = 20, null=True, blank=True)
+    hide_contact_info = models.BooleanField(default = True)
+    send_email_about_new_work = models.BooleanField(default = True)
+    profile_image = models.ImageField(upload_to='pic_folder/', blank=True, null=True)
+    data_of_birth = models.DateField(null=True, blank=True)
+    passed_skills = models.ForeignKey(TestSkill, on_delete = models.CASCADE, null=True, blank=True)
