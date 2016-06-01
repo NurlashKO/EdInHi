@@ -45,14 +45,6 @@ def reg_view(request):
         return render(request, "main_app/reg.html")
 
 def logout_view(request):
+    logout(request)
+    return redirect("index")
 
-    if(request.method=="POST"):
-
-        if request.user.is_authenticated():
-            logout(request)
-            return redirect("index")
-
-        else:
-            return render(request, "main_app/reg.html")
-
-    return render(request, "main_app/reg.html")

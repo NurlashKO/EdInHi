@@ -57,8 +57,13 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="{% url "reg" %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                  <li><a href="{% url "auth" %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    {% if request.user.is_authenticated %}
+                        <li><a href="{% url "profile" %}"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+                        <li><a href="{% url "logout" %}"><span class="glyphicon glyphicon-log-in"></span>Sign Out</a></li>
+                    {% else %}
+                        <li><a href="{% url "reg" %}"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+                        <li><a href="{% url "auth" %}"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -93,6 +98,7 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="{% static "js/paralax.js" %}"></script>
+
     <!-- Script to Activate the Carousel -->
 
 </body>

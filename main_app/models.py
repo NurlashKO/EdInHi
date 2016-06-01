@@ -1,7 +1,9 @@
 import uuid
 
+from django.contrib.auth.models import User
 from django.db import models
 import datetime
+from django.db.models.signals import post_save
 
 # Create your models here.
 
@@ -61,3 +63,20 @@ class TestTask(models.Model):
 #     id = models.IntegerField(primary_key=True, default=uuid.uuid4(), editable=False)
 #     title = models.CharField(max_length=128)
 #     description = models.CharField(max_length=512)
+
+class AbstractUser(models.Model):
+    # MAIN
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    phone = models.CharField(max_length = 20, null=True, blank=True)
+    hide_contact_info = models.BooleanField(default = True)
+    send_email_about_new_work = models.BooleanField(default = True)
+    profile_image = models.ImageField(upload_to='pic_folder/', blank=True, null=True)
+    data_of_birth = models.DateField(null=True, blank=True)
+    passed_skills = models.ForeignKey(TestSkill, on_delete = models.CASCADE, null=True, blank=True)
+
+    def create_profile(sender, **kwargs):
+        user = kwargs["instance"]
+        if kwargs["created"]:
+            up = AbstractUser(user=user)
+            up.save()
+    post_save.connect(create_profile, sender=User)
