@@ -29,11 +29,8 @@ class TestProfession(models.Model):
     profession_name = models.CharField(max_length = 200)
     profession_field = models.CharField(max_length = 200)
 
-
 class TestSkill(models.Model):
     skill_name = models.CharField(max_length = 200)
-
-
 
 class TestTask(models.Model):
     task_name = models.CharField(max_length = 200)
