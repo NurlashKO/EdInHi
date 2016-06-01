@@ -9,7 +9,6 @@ def index(request):
     name='main_app/base.html'
     if request.user.is_authenticated():
         name='main_app/loginBase.html'
-        #pnum = request.user.abstractuser.phone
     return render(request, 'main_app/index.html', {'template': name})
 
 def task(request, task_id):

@@ -57,8 +57,13 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="{% url "reg" %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                  <li><a href="{% url "auth" %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    {% if request.user.is_authenticated %}
+                        <li><a href="{% url "profile" %}"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+                        <li><a href="{% url "sign_out" %}"><span class="glyphicon glyphicon-log-in"></span>Sign Out</a></li>
+                    {% else %}
+                        <li><a href="{% url "reg" %}"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+                        <li><a href="{% url "auth" %}"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

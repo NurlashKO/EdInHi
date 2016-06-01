@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^authentification/', include('registration.urls')),
     url(r'^skills/', include('skill.urls')),
     url(r'^', include('main_app.urls')),
+    url(r'^profile/', include('profile_controller.urls')),
 ]

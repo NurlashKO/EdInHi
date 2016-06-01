@@ -26,7 +26,7 @@ def reg_view(request):
         if User.objects.filter(username=email).exists():
             return render(request, "main_app/reg.html")
         else:
-            user = User.objects.create_user(email, email, password)
+            user = User.objects.create_user(username=email, email=email, password=password)
             user.save()
             user = authenticate(username=email, password=password)
             login(request, user)

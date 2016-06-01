@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'skill',
     'media',
     'tasks',
+    'profile_controller',
 ]
 
 MIDDLEWARE_CLASSES = [
