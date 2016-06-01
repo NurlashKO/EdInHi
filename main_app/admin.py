@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 # Register your models here.
 from .models import *
 
-<<<<<<< HEAD
 class AbstractUserInline(admin.StackedInline):
     model = AbstractUser
     can_delete = False
@@ -16,8 +15,6 @@ class UserAdmin(BaseUserAdmin):
 
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
-=======
->>>>>>> 1956836ea3ea19ed48d43eaf9d25d3ef4eb2bc0e
 
 admin.site.register(TestUserProfile)
 admin.site.register(TestUser)
