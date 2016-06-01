@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from django.db.models.signals import post_save
 
 # Create your models here.
 
@@ -51,3 +52,10 @@ class AbstractUser(models.Model):
     profile_image = models.ImageField(upload_to='pic_folder/', blank=True, null=True)
     data_of_birth = models.DateField(null=True, blank=True)
     passed_skills = models.ForeignKey(TestSkill, on_delete = models.CASCADE, null=True, blank=True)
+
+    def create_profile(sender, **kwargs):
+        user = kwargs["instance"]
+        if kwargs["created"]:
+            up = AbstractUser(user=user)
+            up.save()
+    post_save.connect(create_profile, sender=User)
