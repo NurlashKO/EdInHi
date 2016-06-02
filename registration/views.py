@@ -1,3 +1,5 @@
+import re
+
 from django.core.exceptions import ValidationError
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
@@ -23,14 +25,18 @@ def reg_view(request):
         print("Got in")
         email = request.POST['email']
         password = request.POST['password']
-        if User.objects.filter(username=email).exists():
-            return render(request, "main_app/reg.html")
+        repassword = request.POST['repassword']
+        if re.match(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$', password) and password==repassword:
+            if User.objects.filter(username=email).exists():
+                return render(request, "main_app/reg.html")
+            else:
+                user = User.objects.create_user(username=email, email=email, password=password)
+                user.save()
+                user = authenticate(username=email, password=password)
+                login(request, user)
+                return redirect("index")
         else:
-            user = User.objects.create_user(username=email, email=email, password=password)
-            user.save()
-            user = authenticate(username=email, password=password)
-            login(request, user)
-            return redirect("index")
+            return render(request, "main_app/reg.html")
     else:
         return render(request, "main_app/reg.html")
 
