@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf.urls.static import static
+
+from EdInHi import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -22,4 +25,4 @@ urlpatterns = [
     url(r'^skills/', include('skill.urls')),
     url(r'^', include('main_app.urls')),
     url(r'^profile/', include('profile_controller.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
