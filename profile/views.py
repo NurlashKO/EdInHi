@@ -1,3 +1,5 @@
+import os
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 
@@ -17,6 +19,7 @@ def profile_view(request):
                 newUser = request.user
                 newUser.first_name = new_first_name
                 newUser.last_name = new_last_name
+                os.remove(newUser.abstractuser.profile_image.name)
                 newUser.abstractuser.profile_image = request.FILES['file']
                 newUser.abstractuser.phone = new_phone_number
 
