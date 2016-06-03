@@ -5,7 +5,7 @@
 {% block content %}
     <div class="row">
         <div class="col-sm-offset-4 col-sm-4" style="margin-top: 70px">
-            <form role="form" method="POST">
+            <form role="form" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="FirstName">First Name:</label>
@@ -18,6 +18,13 @@
                 <div class="form-group">
                     <label for="phone">Phone number:</label>
                     <input name="phoneNumber" type="number" class="form-control" value="{{ user.abstractuser.phone }}">
+                </div>
+                <div class="form-group">
+                    <label for="image">Image:</label>
+                    {% if user.abstractuser.profile_image %}
+                    <img src='{{ user.abstractuser.profile_image.url }}' alt="Allah Akbar">
+                    {% endif %}
+                    <input id="image" type="file" class="" name="file">
                 </div>
             <button type="submit" class="btn btn-info">Save</button>
             <a href="{% url "index" %}" class="btn btn-default">Back</a>

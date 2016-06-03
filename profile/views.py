@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 
 from main_app.models import AbstractUser
-from profile_controller.forms import UploadFileForm
+from profile.forms import UploadFileForm
 
 
 def profile_view(request):
@@ -24,7 +24,7 @@ def profile_view(request):
                 newUser.abstractuser.save()
 
         else:
-            return render(request, 'profileTemplates/profileHTML.html', {'user' : request.user})
+            return render(request, 'profile/profile.html', {'user' : request.user})
 
         return redirect('index')
     else:

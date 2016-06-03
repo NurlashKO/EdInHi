@@ -17,7 +17,7 @@ def auth_view(request):
         if user is not None:
             login(request, user)
             return redirect("index")
-    return render(request, "main_app/auth.html")
+    return render(request, "registration/auth.html")
 
 
 def reg_view(request):
@@ -28,7 +28,7 @@ def reg_view(request):
         repassword = request.POST['repassword']
         if re.match(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$', password) and password==repassword:
             if User.objects.filter(username=email).exists():
-                return render(request, "main_app/reg.html")
+                return render(request, "registration/reg.html")
             else:
                 user = User.objects.create_user(username=email, email=email, password=password)
                 user.save()
@@ -36,9 +36,9 @@ def reg_view(request):
                 login(request, user)
                 return redirect("index")
         else:
-            return render(request, "main_app/reg.html")
+            return render(request, "registration/reg.html")
     else:
-        return render(request, "main_app/reg.html")
+        return render(request, "registration/reg.html")
 
 def logout_view(request):
     logout(request)

@@ -19,7 +19,7 @@ PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '..')
 SITE_ROOT = PROJECT_ROOT
 
 MEDIA_ROOT = os.path.join(SITE_ROOT)
-MEDIA_URL = '/pic_folder/'
+MEDIA_URL = '/Images/'
 
 STATIC_ROOT = os.path.join(SITE_ROOT, 'static')
 STATIC_URL = '/static/'
@@ -64,7 +64,7 @@ INSTALLED_APPS = [
     'skill',
     'media',
     'tasks',
-    'profile_controller',
+    'profile',
 ]
 
 MIDDLEWARE_CLASSES = [

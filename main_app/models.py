@@ -22,7 +22,7 @@ class AbstractUser(models.Model):
     organization = models.CharField(max_length=100, null=True, blank=True)
     hide_contact_info = models.BooleanField(default = True)
     send_email_about_new_work = models.BooleanField(default = True)
-    profile_image = models.ImageField(upload_to='pic_folder/', blank=True, null=True)
+    profile_image = models.ImageField(upload_to='Images/', blank=True, null=True)
     data_of_birth = models.DateField(null=True, blank=True)
     passed_skills = models.ForeignKey(Skill, on_delete = models.CASCADE, null=True, blank=True)
 
@@ -31,7 +31,7 @@ class AbstractUser(models.Model):
     email = models.EmailField(null=True, blank=True)
     contact_phone = models.CharField(max_length=20, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
-    logo = models.ImageField(upload_to='pic_folder/', blank=True, null=True)
+    logo = models.ImageField(upload_to='Images/', blank=True, null=True)
     task = models.ManyToManyField(Task, blank=True)
     web_page = models.CharField(max_length = 100, null=True, blank=True)
 
