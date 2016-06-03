@@ -22,8 +22,9 @@
                 <div class="form-group">
                     <label for="image">Image:</label>
                     {% if user.abstractuser.profile_image %}
-                    <img src='{{ user.abstractuser.profile_image.url }}' alt="Allah Akbar">
+                        <img src='{{ user.abstractuser.profile_image.url }}' alt="Allah Akbar" width="200px" height="200px" style="top: 0px; left: -250px; position: absolute">
                     {% endif %}
+                    {# Sorry Aziza, I've tried...#}
                     <input id="image" type="file" class="" name="file">
                 </div>
             <button type="submit" class="btn btn-info">Save</button>
