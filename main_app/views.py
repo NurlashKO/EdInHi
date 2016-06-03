@@ -7,10 +7,9 @@ from .models import *
 
 def index(request):
     name='main_app/base.html'
-    if request.user.is_authenticated():
-        name='main_app/loginBase.html'
     return render(request, 'main_app/index.html', {'template': name})
 
+#What task is it?
 def task(request, task_id):
-    task = get_object_or_404(TestTask, pk=task_id)
+    task = get_object_or_404(Task, pk=task_id)
     return render(request, 'main_app/task.html', {'task':task})

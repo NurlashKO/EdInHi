@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class ProfileControllerConfig(AppConfig):
-    name = 'profile_controller'
+    name = 'profile'
