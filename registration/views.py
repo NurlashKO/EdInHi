@@ -34,7 +34,7 @@ def reg_view(request):
                 user.save()
                 user = authenticate(username=email, password=password)
                 login(request, user)
-                return redirect("index")
+                return render(request, "profile/profile.html")
         else:
             return render(request, "registration/reg.html")
     else:
