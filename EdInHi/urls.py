@@ -25,4 +25,6 @@ urlpatterns = [
     url(r'^skills/', include('skill.urls')),
     url(r'^', include('main_app.urls')),
     url(r'^profile/', include('profile.urls')),
+    url(r'^company/', include('company.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

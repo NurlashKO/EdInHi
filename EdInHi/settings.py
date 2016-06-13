@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'media',
     'tasks',
     'profile',
+    'company',
 ]
 
 MIDDLEWARE_CLASSES = [

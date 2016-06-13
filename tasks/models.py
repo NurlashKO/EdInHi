@@ -1,12 +1,19 @@
 from django.db import models
-import datetime
+from skill.models import Skill
+from django.utils import timezone
 
 
 # Create your models here.
 class Task(models.Model):
-    task_id = models.IntegerField(default=0)
-    task_name = models.CharField(max_length = 200)
-    task_description = models.TextField(max_length = 10000, default = "")
-    task_problem = models.TextField(max_length = 10000, default = "")
-    pub_date = models.DateTimeField('date published', default = datetime.datetime.now())
+    name = models.CharField(max_length = 200)
+    description = models.TextField(max_length = 10000, default = "")
+    problem = models.TextField(max_length = 10000, default = "")
+    pub_date = models.DateTimeField('date published', default = timezone.now)
 
+class CompanyTask(models.Model):
+    name = models.CharField(max_length=200)
+    comment_to_task = models.TextField()
+    description = models.TextField()
+    contact_email = models.EmailField()
+    phone = models.CharField(max_length=20, null=True, blank=True)
+    pub_date = models.DateTimeField('date published', default = timezone.now)
