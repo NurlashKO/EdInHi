@@ -1,0 +1,100 @@
+#banner {
+    padding-left: 5%;
+}
+
+#banner h2 {
+    width: 0;
+    text-align: left;
+}
+
+#banner p {
+    text-align: left;
+}
+
+#banner ul {
+    width: 0;
+}
+
+.company_box {
+    margin-bottom: 20%;
+    position: relative;
+}
+
+.company_box img, .company_box .company_content {
+    position: absolute;
+}
+
+.company_box .fit {
+    margin: 0%;
+}
+
+.company_box .company_content {
+    padding: 5.4% 6%;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 1.5%;
+}
+
+.company_box a {
+    color: white;
+}
+
+.company_box h3 {
+    color: white;
+}
+
+.company_box .company_content:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.company_tab_menu {
+    width: 100%;
+}
+
+.company_tab_menu ul {
+    list-style: none;
+    padding: 0%;
+}
+
+.company_tab_menu ul li {
+    display: inline;
+    padding: 0%;
+}
+
+.company_tab_menu button {
+    border-width: 0 0.5px 0 0;
+    padding: 2% 5%;
+    margin: 0% -0.25%;
+    font-size: 26px;
+    width: 33.3%;
+}
+
+.tab_element {
+    background-color: #aaa;
+    color: white;
+}
+
+.tab_element:hover {
+    background-color: #a5a5a5;
+}
+
+.tab_element:active {
+    background-color: #888;
+}
+
+.tab_element.clicked {
+    background-color: #e89980;
+}
+
+.tab_element:focus {
+    outline: 0;
+    border-right: 0.5px solid #888;
+}
+
+.company_tab {
+    margin: 0 -0.25%;
+    width: 99.9%;
+}
+
+div[id$="-err"] {
+    color: #e89980;
+}
