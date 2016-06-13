@@ -2,9 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44e8512c-9f13-4d4a-95cb-68ab646b564f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/css/images/overlay.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/fonts/fontawesome-webfont.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/images/banner.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/images/left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/images/pic01.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/images/pic02.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/images/pic03.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/images/pic04.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/images/pic05.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/images/right.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/images/temp.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/css/custom.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/css/ie8.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/css/main.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/js/ie/PIE.htc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/js/ie/backgroundsize.min.htc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/js/ie/html5shiv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/js/ie/respond.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/js/jquery.dropotron.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/js/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/js/jquery.scrollgress.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/js/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/js/skel.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/js/util.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/js/validation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/sass/ie8.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/sass/libs/_functions.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/sass/libs/_mixins.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/sass/libs/_skel.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/sass/libs/_vars.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main_app/static/sass/main.scss" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main_app/migrations/0003_auto_20160601_0625.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main_app/migrations/0004_auto_20160601_0650.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main_app/static/images/bg1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main_app/static/images/bg1_blur.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/main_app/static/images/comp_room.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/media/migrations/0001_initial.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/skill/migrations/0001_initial.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/skill/migrations/0002_auto_20160601_0605.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/migrations/0001_initial.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/migrations/0002_auto_20160603_1736.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/migrations/0003_auto_20160603_1751.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/registration/views.py" afterPath="$PROJECT_DIR$/registration/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_app/templates/main_app/base.html" afterPath="$PROJECT_DIR$/main_app/templates/main_app/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_app/templates/main_app/index.html" afterPath="$PROJECT_DIR$/main_app/templates/main_app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile/templates/profile/profile.html" afterPath="$PROJECT_DIR$/profile/templates/profile/profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/registration/templates/registration/auth.html" afterPath="$PROJECT_DIR$/registration/templates/registration/auth.html" />
     </list>
     <ignored path="EdInHi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,7 +85,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/profile/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="0">
               <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
@@ -44,9 +97,71 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/registration/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="32" column="95" selection-start-line="32" selection-start-column="95" selection-end-line="32" selection-end-column="95" />
+            <state relative-caret-position="300">
+              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/profile/templates/profile/profile.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/registration/templates/registration/auth.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_app/static/css/custom.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FontAwesome.otf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_app/static/fonts/FontAwesome.otf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customized.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_app/static/css/customized.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_app/templates/main_app/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+              <folding>
+                <marker date="1465823132056" expanded="true" signature="92:4310" ph="{% block content ... %}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,10 +171,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
         <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -67,7 +182,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="RefactoringBranch" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="PUSH_TAGS">
@@ -86,7 +201,6 @@
         <option value="$PROJECT_DIR$/main_app/static/js/script" />
         <option value="$PROJECT_DIR$/main_app/static/js/paralax.js" />
         <option value="$PROJECT_DIR$/main_app/templates/main_app/auth.html" />
-        <option value="$PROJECT_DIR$/main_app/static/css/customized.css" />
         <option value="$PROJECT_DIR$/profile_controller/templates/profile/profile.html" />
         <option value="$PROJECT_DIR$/profile_controller/urls.py" />
         <option value="$PROJECT_DIR$/profile_controller/templates/profileHTML.html" />
@@ -103,16 +217,21 @@
         <option value="$PROJECT_DIR$/skill/templates/skill/skill.html" />
         <option value="$PROJECT_DIR$/main_app/views.py" />
         <option value="$PROJECT_DIR$/main_app/models.py" />
-        <option value="$PROJECT_DIR$/main_app/templates/main_app/base.html" />
         <option value="$PROJECT_DIR$/registration/urls.py" />
         <option value="$PROJECT_DIR$/main_app/urls.py" />
-        <option value="$PROJECT_DIR$/main_app/templates/main_app/index.html" />
         <option value="$PROJECT_DIR$/registration/templates/registration/reg.html" />
         <option value="$PROJECT_DIR$/main_app/static/js/Validation.js" />
         <option value="$PROJECT_DIR$/EdInHi/settings.py" />
-        <option value="$PROJECT_DIR$/profile/templates/profile/profile.html" />
         <option value="$PROJECT_DIR$/profile/views.py" />
         <option value="$PROJECT_DIR$/registration/views.py" />
+        <option value="$PROJECT_DIR$/profile/templates/profile/profile.html" />
+        <option value="$PROJECT_DIR$/main_app/templates/main_app/base.html" />
+        <option value="$PROJECT_DIR$/main_app/templates/main_app/index.html" />
+        <option value="$PROJECT_DIR$/main_app/static/css/custom.css" />
+        <option value="$PROJECT_DIR$/main_app/static/css/images/customized.css" />
+        <option value="$PROJECT_DIR$/main_app/static/css/customized.css" />
+        <option value="$PROJECT_DIR$/main_app/static/fonts/FontAwesome.otf" />
+        <option value="$PROJECT_DIR$/registration/templates/registration/auth.html" />
       </list>
     </option>
   </component>
@@ -175,8 +294,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -205,12 +322,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="registration" />
+              <option name="myItemId" value="tasks" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -218,20 +337,23 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="list.type.of.created.stylesheet" value="Native" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Aziza\PycharmProjects\EdInHi\main_app\static\images" />
-      <recent name="C:\Users\Aziza\PycharmProjects\EdInHi\main_app\templates\main_app" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\asus\PyCharmProjects\EdInHi\registration\templates\registration" />
       <recent name="C:\Users\asus\PyCharmProjects\EdInHi\profile\templates\profile" />
       <recent name="$PROJECT_DIR$/profile_controller/templates/profileTemplates" />
       <recent name="C:\Users\Aziza\PycharmProjects\EdInHi\main_app\static\images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Education\Django\EdInHi\main_app\static\fonts" />
+      <recent name="D:\Education\Django\EdInHi\main_app\static" />
+      <recent name="D:\Education\Django\EdInHi\main_app\static\css" />
+      <recent name="C:\Users\Aziza\PycharmProjects\EdInHi\main_app\static\images" />
+      <recent name="C:\Users\Aziza\PycharmProjects\EdInHi\main_app\templates\main_app" />
     </key>
   </component>
   <component name="RunManager" selected="Django server.EdInHi">
@@ -587,21 +709,21 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17789166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="manage.py@EdInHi" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32649842" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33753943" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33753943" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33753943" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20849934" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2082019" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="manage.py@EdInHi" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32649842" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -627,7 +749,8 @@
     <MESSAGE value="Fifth Refactoring - Now we have no issues" />
     <MESSAGE value="Sixth Refactoring - Now we remove old image from profile when upload new" />
     <MESSAGE value="First Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
+    <MESSAGE value="Refactoring with new templates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring with new templates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -636,34 +759,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/registration/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/registration/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/registration/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/registration/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main_app/static/js/paralax.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -826,22 +921,8 @@
         <state relative-caret-position="272">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_app/templates/main_app/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="69" column="14" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/registration/templates/registration/auth.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -849,13 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_app/templates/main_app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="67" column="14" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -889,57 +963,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/profile/templates/profile/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Images/hcZFXgFpjuI.jpg" />
-    <entry file="file://$PROJECT_DIR$/Images/1182-robot-mountain-steampunk-fantasy_art-wallhaven-736x459.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Images/1432322231_cyberpunk-art-by-adam-kuczek-kiberpank-art-tvorchestvo-4.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Images/c062c5d7b6f7489909f9bec13fc55747.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Images/ClassDiagram.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Images/Screen_Shot_2016-05-23_at_16.44.03.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Images/Technoheart.full.1565365_8fiwOkI.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Images/21.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Images/6LwK4iHOOCM.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/1182-robot-mountain-steampunk-fantasy_art-wallhaven-736x459.jpg" />
+    <entry file="file://$PROJECT_DIR$/Images/1432322231_cyberpunk-art-by-adam-kuczek-kiberpank-art-tvorchestvo-4.jpg" />
+    <entry file="file://$PROJECT_DIR$/Images/c062c5d7b6f7489909f9bec13fc55747.jpg" />
+    <entry file="file://$PROJECT_DIR$/Images/ClassDiagram.png" />
+    <entry file="file://$PROJECT_DIR$/Images/Screen_Shot_2016-05-23_at_16.44.03.png" />
+    <entry file="file://$PROJECT_DIR$/Images/Technoheart.full.1565365_8fiwOkI.jpg" />
+    <entry file="file://$PROJECT_DIR$/Images/21.jpg" />
+    <entry file="file://$PROJECT_DIR$/Images/6LwK4iHOOCM.jpg" />
     <entry file="file://$PROJECT_DIR$/profile/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="0">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
@@ -947,10 +982,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main_app/templates/main_app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <marker date="1465823132056" expanded="true" signature="92:4310" ph="{% block content ... %}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_app/templates/main_app/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile/templates/profile/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_app/static/css/images/customized.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_app/static/css/customized.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_app/static/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_app/static/fonts/FontAwesome.otf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/registration/templates/registration/auth.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/registration/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="32" column="95" selection-start-line="32" selection-start-column="95" selection-end-line="32" selection-end-column="95" />
+        <state relative-caret-position="300">
+          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
           <folding />
         </state>
       </provider>
