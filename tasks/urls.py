@@ -16,16 +16,9 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf.urls.static import static
+from . import views
 
-from EdInHi import settings
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^authentification/', include('registration.urls')),
-    url(r'^skills/', include('skill.urls')),
-    url(r'^', include('main_app.urls')),
-    url(r'^profile/', include('profile.urls')),
-    url(r'^company/', include('company.urls')),
-    url(r'^task/', include('tasks.urls')),
-
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^company/(?P<task_id>[0-9]+)/', views.company_task, name="ctask")
+]

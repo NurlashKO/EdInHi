@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.db.models.signals import post_save
-from tasks.models import Task
 from skill.models import Skill
 
 # Create your models here.
@@ -32,7 +31,6 @@ class AbstractUser(models.Model):
     contact_phone = models.CharField(max_length=20, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     logo = models.ImageField(upload_to='Images/', blank=True, null=True)
-    task = models.ManyToManyField(Task, blank=True)
     web_page = models.CharField(max_length = 100, null=True, blank=True)
 
     #Django authorization
