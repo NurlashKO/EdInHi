@@ -1,11 +1,9 @@
 import re
-
-from django.core.exceptions import ValidationError
-from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from django.contrib.auth.password_validation import validate_password
-from django.contrib import messages
+from django.shortcuts import render, redirect
+
+
 # Create your views here.
 
 
@@ -26,7 +24,7 @@ def reg_view(request):
         email = request.POST['email']
         password = request.POST['password']
         repassword = request.POST['repassword']
-        if re.match(r'^[A-Za-z\d]{6,}$', password) and password==repassword:
+        if re.match(r'^[A-Za-z\d]{6,}$', password) and password == repassword:
             if User.objects.filter(username=email).exists():
                 return render(request, "registration/reg.html")
             else:
@@ -40,6 +38,30 @@ def reg_view(request):
     else:
         return render(request, "registration/reg.html")
 
+
 def logout_view(request):
     logout(request)
     return redirect('index')
+
+
+def company_reg_view(request):
+    if (request.method == "POST"):
+        print("Got in")
+        email = request.POST['email']
+        password = request.POST['password']
+        repassword = request.POST['repassword']
+        if re.match(r'^[A-Za-z\d]{6,}$', password) and password == repassword:
+            if User.objects.filter(username=email).exists():
+                return render(request, "registration/reg.html")
+            else:
+                user = User.objects.create_user(username=email, email=email, password=password)
+                user.save()
+                user.abstractuser.is_company = True
+                user.abstractuser.save()
+                user = authenticate(username=email, password=password)
+                login(request, user)
+                return render(request, "company/company.html")
+        else:
+            return render(request, "registration/reg.html")
+    else:
+        return render(request, "registration/reg.html")
