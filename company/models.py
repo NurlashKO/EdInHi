@@ -1,6 +1,6 @@
 from django.db import models
 from skill.models import Skill
-
+from tasks.models import CompanyTask
 
 # Create your models here.
 
@@ -18,3 +18,4 @@ class Vacancy(models.Model):
     description = models.TextField()
     salary = models.CharField(max_length=100)
     required_skills = models.ManyToManyField(Skill, blank=True)
+    task = models.ManyToManyField(CompanyTask, blank=True)
