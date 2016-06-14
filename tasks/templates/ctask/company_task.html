@@ -1,0 +1,25 @@
+{%extends 'main_app/base.html' %}
+{% load staticfiles %}
+{% block title %}
+    Company Task
+{% endblock%}
+{% block content %}
+
+<br><br><br><br><br>
+
+<div class="container">
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ task.name }}</h3>
+  </div>
+  <div class="panel-body">
+    {{ task.description|safe }}
+
+    <h3><b>Контактные данные</b></h3>
+
+    <p>Email: {{task.contact_email}}</p>
+    <p>Phone: {{task.phone}} </p>
+  </div>
+</div>
+</div>
+{% endblock %}
