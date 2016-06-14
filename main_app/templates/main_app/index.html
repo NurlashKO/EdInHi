@@ -1,4 +1,5 @@
 {% extends template %}
+{% load staticfiles %}
 
 {% block title %}
     EdInHi
@@ -7,65 +8,105 @@
 
 {% block content %}
 
-{% if auth == True  %}
-    <h> AUTHENTIFICATION IS COMPLETE! </h>
-{% endif %}
-<!--parallax 1 -->
+    				<section id="banner">
+					<div class="6u">
+						<h2>EdInHi</h2>
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+						sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+						magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+						quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+						ut aliquip ex ea commodo consequat.
+						</p>
+						<ul class="actions">
+							<li><a href="#" class="button special">Sign up</a></li>
+						</ul>
+					</div>
+				</section>
 
-<section class="bg-1 text-center">
-    <div class="bg-content">
-        <h1 class="">EdInHi</h1>
-        <p class="lead">Blah blah blah</p>
-    </div>
-</section>
-<!--/parallax 1-->
-<div class="divider"></div>
-<div class="container">
-    <div class="info">
-        <h1 class="text-center">About</h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-</div>
-<!--/container-->
-<div class="divider"></div>
-<div class="container">
-    <div class="info">
-        <h1 class="text-center">Form</h1>
-        <div class="row">
-            <div class="col-sm-offset-2 col-sm-8">
-                <table class="table">
-                    <tr>
-                        <th>Back end</th>
-                        <th>Front end</th>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" >Java</td>
-                        <td><input type="checkbox">Javascript</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox">C#</td>
-                        <td><input type="checkbox">HTML</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox">Python</td>
-                        <td><input type="checkbox">CoffeeScript</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="divider"></div>
-<div class="container">
-    <div class="row info">
-        <div class="col-sm-offset-4 col-sm-4">
-            <a href="{% url "reg" %}" class="reg_link btn btn-info">Sign up now</a>
-        </div>
-    </div>
-</div>
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+							<h2>About</h2>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+									sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+									magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+									quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+									ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+									dolor in hendrerit in vulputate velit esse molestie consequat
+									</p>
+						</header>
+					</section>
+
+					<section class="box">
+						<div class="box alt">
+							<div class="row no-collapse 50% uniform">
+								<div class="6u">
+									<span class="image fit"><img src="{% static "images/pic04.jpg" %}" alt="" /></span>
+								</div>
+								<div class="6u">
+									<a href="#"><h3>Company</h3></a>
+									<p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc ornare<br />
+									adipiscing nunc adipiscing. Condimentum turpis massa vel illum dolore eu feugiat nulla facilisis at vero eros et
+									accumsan et iusto odio dignissim qui blandit praesent luptatum
+									zzril.</p>
+								</div>
+							</div>
+							<div class="row no-collapse 50% uniform">
+								<div class="6u company_box">
+									<span class="image fit"><img src="{% static "images/pic04.jpg" %}" alt="" /></span>
+										<a href="#">
+									<span class="company_content">
+											<h3>Company</h3>
+											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+											sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+											magna aliquam erat volutpat.</p>
+									</span>
+										</a>
+								</div>
+								<div class="6u company_box">
+									<span class="image fit"><img src="{% static "images/pic04.jpg" %}" alt="" /></span>
+										<a href="#">
+									<span class="company_content">
+											<h3>Company</h3>
+											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+											sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+											magna aliquam erat volutpat.</p>
+									</span>
+										</a>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<section class="box special features">
+						<div class="features-row">
+							<section>
+								<span class="icon major fa-bolt accent2"></span>
+								<a href="#"><h3>Magna etiam</h3></a>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							</section>
+							<section>
+								<span class="icon major fa-area-chart accent3"></span>
+								<a href="#"><h3>Magna etiam</h3></a>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							</section>
+						</div>
+						<div class="features-row">
+							<section>
+								<span class="icon major fa-cloud accent4"></span>
+								<a href="#"><h3>Magna etiam</h3></a>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							</section>
+							<section>
+								<span class="icon major fa-lock accent5"></span>
+								<a href="#"><h3>Magna etiam</h3></a>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							</section>
+						</div>
+					</section>
+
+				</section>
+
 {% endblock %}
