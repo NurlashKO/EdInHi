@@ -35,9 +35,14 @@
             </form>
         </div>
     </div>
-        {% for vacancy in vacancies %}
-            <p>{{ vacancy.name }}</p>
-        {% endfor %}
+    <a href="{% url "company_add_vacancy" %}">Add Vacancy</a>
+    {% for vacancy in vacancies %}
+        <p>{{ vacancy.name }}</p>
+        <form action="{% url "company_delete_vacancy" vacancy.id %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Delete Vacancy"/>
+        </form>
+    {% endfor %}
 {% endblock %}
 </body>
 </html>
