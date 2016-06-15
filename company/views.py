@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.forms import ModelForm
-from django.shortcuts import redirect, render
+from django.shortcuts import render, get_object_or_404, redirect
 
 from company.models import Vacancy
 from profile.forms import UploadFileForm
@@ -26,7 +26,8 @@ def company_view(request):
                 return redirect('/company')
             return redirect('/company')
         else:
-            return render(request, 'company/company.html', {'user': request.user.abstractuser, 'vacancies' : request.user.abstractuser.vacancies.all()})
+            return render(request, 'company/company.html',
+                          {'user': request.user.abstractuser, 'vacancies': request.user.abstractuser.vacancies.all()})
 
 
 class VacancyForm(ModelForm):
@@ -34,8 +35,9 @@ class VacancyForm(ModelForm):
         model = Vacancy
         fields = ['name', 'description', 'salary']
 
+
 @login_required
-def company_add_task(request):
+def company_add_vacancy(request):
     form = VacancyForm(request.POST or None)
     if form.is_valid():
         vacancy = form.save(commit=False)
@@ -43,5 +45,20 @@ def company_add_task(request):
         request.user.abstractuser.vacancies.add(vacancy)
         request.user.abstractuser.save()
         print(vacancy.name)
+        return redirect('/company')
+    return render(request, 'company/company_add_vacancy.html', {'form': form})
 
-    return render(request, 'company/company_add_task.html', {'form': form})
+
+@login_required
+def company_delete_vacancy(request, pk):
+    vacancy = get_object_or_404(Vacancy, pk=pk)
+    print(vacancy.name)
+    print("ok")
+    print(request.method)
+    if request.method == 'POST':
+        print("Got in!")
+        request.user.abstractuser.vacancies.remove(vacancy)
+        vacancy.delete()
+        request.user.abstractuser.save()
+        print(vacancy.name)
+    return redirect("/company")
