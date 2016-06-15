@@ -1,5 +1,19 @@
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
-</form>
+{% extends 'main_app/base.html' %}
+
+{% block title %}
+
+    Add vacancy
+{% endblock %}
+{% block content %}
+<section class="container">
+    <div class="row uniform">
+        <div class="box form-box">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
