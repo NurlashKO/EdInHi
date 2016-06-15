@@ -14,12 +14,12 @@
             {% csrf_token %}
             {% for quest in quiz.question_set.all %}
                 <h3>{{ quest.question }}</h3>
-                <form>
-                    <input type="radio" id="c{{ quest.id }}" name="checks[]" value="{{ quest.answer_right }}"/><label for="c{{ quest.id }}">{{ quest.answer_right }}</label>
-                    <input type="radio" id="c1{{ quest.id }}" name="checks[]" value="{{ quest.answer1 }}"/><label for="c1{{ quest.id }}">{{ quest.answer1 }}</label>
-                    <input type="radio" id="c2{{ quest.id }}" name="checks[]" value="{{ quest.answer2 }}"/><label for="c2{{ quest.id }}">{{ quest.answer2 }}</label>
-                    <input type="radio" id="c3{{ quest.id }}" name="checks[]" value="{{ quest.answer3 }}"/><label for="c3{{ quest.id }}">{{ quest.answer3 }}</label>
-                </form>
+                <div class="checkbox">
+                    <input type="checkbox" id="c{{ quest.id }}" name="checks[]" value="{{ quest.answer_right }}"/><label for="c{{ quest.id }}">{{ quest.answer_right }}</label>
+                    <input type="checkbox" id="c1{{ quest.id }}" name="checks[]" value="{{ quest.answer1 }}"/><label for="c1{{ quest.id }}">{{ quest.answer1 }}</label>
+                    <input type="checkbox" id="c2{{ quest.id }}" name="checks[]" value="{{ quest.answer2 }}"/><label for="c2{{ quest.id }}">{{ quest.answer2 }}</label>
+                    <input type="checkbox" id="c3{{ quest.id }}" name="checks[]" value="{{ quest.answer3 }}"/><label for="c3{{ quest.id }}">{{ quest.answer3 }}</label>
+                </div>
             {% endfor %}
             <input type="submit" value="Submit">
         </form>
