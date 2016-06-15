@@ -15,7 +15,7 @@ def quiz_view(request, quiz_id):
     for somee in user_answered_questions:
         for t in somee.question.all():
             user_answeredArray.append(t)
-        
+
     completed = True
     for t in quiz_questions:
         if t not in user_answeredArray:
