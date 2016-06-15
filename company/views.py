@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.forms import ModelForm
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from company.models import Vacancy
 from profile.forms import UploadFileForm
@@ -23,7 +23,8 @@ def company_view(request):
                 newUser.abstractuser.profile_image = request.FILES['file']
                 newUser.save()
                 newUser.abstractuser.save()
-
+                return redirect('/company')
+            return redirect('/company')
         else:
             return render(request, 'company/company.html', {'user': request.user.abstractuser, 'vacancies' : request.user.abstractuser.vacancies.all()})
 
