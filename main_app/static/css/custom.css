@@ -116,3 +116,30 @@ div[id$="-err"] {
 .box.form-box label{
     margin: 0 0 0.5% 0;    
 }
+
+.text-image-box {
+    position: relative;
+}
+
+.text-image-box h3{
+    position: absolute;
+    margin-top: -20%;
+    font-size: 60px;;
+    color: #fff;
+    
+}
+
+.text-image-box .blur-bg {
+    position: absolute;
+    width: 1033px;
+    height: 200px;
+    background: rgba(100,100,100,0.5);
+    margin: -29.5% 0 0 -7%;
+    background: -webkit-linear-gradient( bottom, rgba(18,18,18,0.7),  rgba(20,20,20,0));
+    -webkit-filter: blur(3px);   
+}
+
+a.button:hover {
+    color: #fff;
+    text-decoration: none;
+}
