@@ -131,10 +131,10 @@ div[id$="-err"] {
 
 .text-image-box .blur-bg {
     position: absolute;
-    width: 1033px;
-    height: 200px;
+    width: 114.2%;
+    height: 35%;
     background: rgba(100,100,100,0.5);
-    margin: -29.5% 0 0 -7%;
+    margin: -29.5% 0 0 -7.2%;
     background: -webkit-linear-gradient( bottom, rgba(18,18,18,0.7),  rgba(20,20,20,0));
     -webkit-filter: blur(3px);   
 }
