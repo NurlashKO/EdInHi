@@ -7,7 +7,11 @@
     <br><br><br><br><br>
     <div class="row">
         <div class="col-sm-4">
-            <img src="{% static "images/temp.png" %}">
+            {% if user.abstractuser.profile_image %}
+                <img src="{{ user.abstractuser.profile_image.url }}" alt="My Image" style = "width: 300px; height: 300px;">
+            {% else %}
+                <img src="{% static "images/temp.png" %}">
+            {% endif %}
         </div>
         <div class="col-sm-8">
             <form role="form" method="POST" enctype="multipart/form-data">

@@ -1,46 +1,58 @@
 from django.contrib.auth.decorators import login_required
-from django.forms import ModelForm
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 
-from company.models import Vacancy
-from profile.forms import UploadFileForm
+from .forms import CompanyForm, VacancyForm, TaskForm
+from .models import Vacancy
 
 
 def company_view(request):
+    cform = CompanyForm()
     if request.user.is_authenticated():
+        if request.user.abstractuser.is_company == False:
+            return redirect('/profile')
         if request.method == "POST":
-            form = UploadFileForm(request.POST, request.FILES)
-            if form.is_valid():
-                new_name = request.POST['name']
-                new_webpage = request.POST['webpage']
-                new_contact_phone = request.POST['contactPhone']
-
-                newUser = request.user
-                newUser.abstractuser.name = new_name
-                newUser.abstractuser.web_page = new_webpage
-                newUser.abstractuser.contact_phone = new_contact_phone
-
-                newUser.abstractuser.profile_image = request.FILES['file']
-                newUser.save()
-                newUser.abstractuser.save()
-
+            cform = CompanyForm(request.POST, request.FILES, instance=request.user.abstractuser)
+            if cform.is_valid():
+                cform.logo = request.FILES['logo']
+                cform.save()
+                return redirect('/company')
+            return redirect('/company')
         else:
-            return render(request, 'company/company.html', {'user': request.user.abstractuser, 'vacancies' : request.user.abstractuser.vacancies.all()})
+            return render(request, 'company/company.html',
+                          {'user': request.user.abstractuser, 'vacancies': request.user.abstractuser.vacancies.all()})
 
-
-class VacancyForm(ModelForm):
-    class Meta:
-        model = Vacancy
-        fields = ['name', 'description', 'salary']
 
 @login_required
-def company_add_task(request):
-    form = VacancyForm(request.POST or None)
-    if form.is_valid():
-        vacancy = form.save(commit=False)
-        vacancy.save()
-        request.user.abstractuser.vacancies.add(vacancy)
+def company_add_vacancy(request):
+    vform = VacancyForm()
+    tform = TaskForm()
+    if (request.method == "POST"):
+        vform = VacancyForm(request.POST)
+        tform = TaskForm(request.POST)
+        if (vform.is_valid() and tform.is_valid()):
+            vacancy = vform.save(commit=False)
+            task = tform.save(commit=False)
+            task.save()
+            vacancy.save()
+            vacancy.task.add(task)
+            vacancy.save()
+            request.user.abstractuser.vacancies.add(vacancy)
+            request.user.abstractuser.save()
+            return redirect('/company')
+    data = {'vform': vform, 'tform': tform}
+    return render(request, 'company/company_add_vacancy.html', data)
+
+
+@login_required
+def company_delete_vacancy(request, pk):
+    vacancy = get_object_or_404(Vacancy, pk=pk)
+    print(vacancy.name)
+    print("ok")
+    print(request.method)
+    if request.method == 'POST':
+        print("Got in!")
+        request.user.abstractuser.vacancies.remove(vacancy)
+        vacancy.delete()
         request.user.abstractuser.save()
         print(vacancy.name)
-
-    return render(request, 'company/company_add_task.html', {'form': form})
+    return redirect("/company")

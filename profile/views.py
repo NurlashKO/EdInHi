@@ -6,6 +6,8 @@ import os
 
 def profile_view(request):
     if request.user.is_authenticated():
+        if request.user.abstractuser.is_company == True:
+            return redirect('/company')
         if request.method == "POST":
             form = UploadFileForm(request.POST, request.FILES)
             if form.is_valid():

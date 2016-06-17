@@ -1,0 +1,15 @@
+{% extends "main_app/base.html" %}
+{% load staticfiles %}
+{% block content %}
+<br><br><br><br>
+<div class="container">
+<form method="POST">
+    {% csrf_token %}
+    <h1>Vacancy Form</h1>
+    {{ vform.as_p }}
+    <h1> Task Form </h1>
+    {{ tform.as_p }}
+    <input type="submit" value="Submit" />
+</form>
+</div>
+{% endblock %}
