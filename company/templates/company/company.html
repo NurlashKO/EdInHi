@@ -10,7 +10,7 @@
         <div class="box form-box">
             <div class="text-image-box">
                 <span class="image featured">
-                    <img src="{% static "images/company.jpg" %}" alt="" />
+                    <img src="{% static "user.logo" %}" alt="" />
                 </span>
                 <div class="blur-bg"></div>
                 <h3>Company</h3>
@@ -19,24 +19,24 @@
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="Name">Name:</label>
-                    <input name="name" type="text" class="form-control" value="{{ user.abstractuser.name }}">
+                    <input name="name" type="text" class="form-control" value="{{ user.name }}">
                 </div>
                 <div class="form-group">
                     <label for="Webpage">Website:</label>
-                    <input name="webpage" type="text" class="form-control" value="{{ user.abstractuser.web_page }}">
+                    <input name="web_page" type="text" class="form-control" value="{{ user.web_page }}">
                 </div>
                 <div class="form-group">
-                    <label for="ContactPhone">Contact phone:</label>
-                    <input name="contactPhone" type="text" class="form-control"
-                           value="{{ user.abstractuser.contact_phone }}">
+                    <label for="contact_phone">Contact phone:</label>
+                    <input name="contact_phone" type="text" class="form-control"
+                           value="{{ user.contact_phone }}">
                 </div>
                 <div class="form-group">
                     <label for="image">Image:</label>
-                    {% if user.abstract_user.logo %}
+                    {% if user.logo %}
                         <img src='{{ company }}' alt="No Image" width="200px" height="200px"
                              style="top: 0px; left: -250px; position: absolute">
                     {% endif %}
-                    <input id="image" type="file" class="" name="file">
+                    <input id="image" type="file" class="" name="logo">
                 </div>
                 <button type="submit" class="button special">Save</button>
                 <a href="{% url "index" %}" class="button">Back</a>
