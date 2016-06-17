@@ -12,6 +12,7 @@ def company_view(request):
         if request.method == "POST":
             cform = CompanyForm(request.POST, request.FILES, instance=request.user.abstractuser)
             if cform.is_valid():
+                cform.logo = request.FILES['logo']
                 cform.save()
                 return redirect('/company')
             return redirect('/company')
