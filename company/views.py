@@ -1,29 +1,18 @@
 from django.contrib.auth.decorators import login_required
-from django.forms import ModelForm, modelformset_factory
+from django.forms import ModelForm
 from django.shortcuts import render, get_object_or_404, redirect
-
-from company.models import Vacancy, CompanyTask
-from .forms import VacancyForm, TaskForm
 from profile.forms import UploadFileForm
 
+from .models import Vacancy
+from .forms import CompanyForm, VacancyForm, TaskForm
+
 def company_view(request):
+    cform = CompanyForm()
     if request.user.is_authenticated():
         if request.method == "POST":
-            form = UploadFileForm(request.POST, request.FILES)
-            if form.is_valid():
-                print ("yes")
-                new_name = request.POST['name']
-                new_webpage = request.POST['webpage']
-                new_contact_phone = request.POST['contactPhone']
-
-                newUser = request.user
-                newUser.abstractuser.name = new_name
-                newUser.abstractuser.web_page = new_webpage
-                newUser.abstractuser.contact_phone = new_contact_phone
-
-                newUser.abstractuser.profile_image = request.FILES['file']
-                newUser.save()
-                newUser.abstractuser.save()
+            cform = CompanyForm(request.POST, request.FILES, instance=request.user.abstractuser)
+            if cform.is_valid():
+                cform.save()
                 return redirect('/company')
             return redirect('/company')
         else:
@@ -66,8 +55,3 @@ def company_delete_vacancy(request, pk):
         request.user.abstractuser.save()
         print(vacancy.name)
     return redirect("/company")
-
-@login_required
-def all_vacancies(request):
-    all = Vacancy.objects.all()
-    return render(request, 'vacancies.html', {'all_vacancies' : all_vacancies})
