@@ -27,5 +27,6 @@ urlpatterns = [
     url(r'^profile/', include('profile.urls')),
     url(r'^company/', include('company.urls')),
     url(r'^task/', include('tasks.urls')),
+    url(r'^quiz/', include('quiz.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

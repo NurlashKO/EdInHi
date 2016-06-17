@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'tasks',
     'profile',
     'company',
+    'quiz',
 ]
 
 MIDDLEWARE_CLASSES = [

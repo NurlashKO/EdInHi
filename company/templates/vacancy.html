@@ -1,0 +1,14 @@
+{% extends "main_app/base.html" %}
+
+{% block title %}{{ vacancy.name }}{% endblock %}
+
+{% block content %}
+    <br><br><br>
+    <h1>Name - {{ vacancy.name }}</h1>
+    <h1>Description - {{ vacancy.description }}</h1>
+    <h1>Salary - {{ vacancy.salary }}</h1>
+    {% for each_task in vacancy.task.all %}
+        <h1>Task name - {{ each_task.name }}</h1>
+        <h1>Task description - {{ each_task.description }}</h1>
+    {% endfor %}
+{% endblock %}

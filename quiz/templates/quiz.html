@@ -1,0 +1,32 @@
+{% extends "main_app/base.html" %}
+
+{% block title %}Quiz, {{ quiz.title }}{% endblock %}
+
+{% block content %}
+    <br><br><br><br>
+
+    <h1>{{ quiz.title}}</h1>
+
+    <br>
+
+    {% if completed == False %}
+        <form method="post">
+            {% csrf_token %}
+            {% for quest in quiz.question_set.all %}
+                <h3>{{ quest.question }}</h3>
+                <div class="checkbox">
+                    <input type="checkbox" id="c{{ quest.id }}" name="checks[]" value="{{ quest.answer_right }}"/><label for="c{{ quest.id }}">{{ quest.answer_right }}</label>
+                    <input type="checkbox" id="c1{{ quest.id }}" name="checks[]" value="{{ quest.answer1 }}"/><label for="c1{{ quest.id }}">{{ quest.answer1 }}</label>
+                    <input type="checkbox" id="c2{{ quest.id }}" name="checks[]" value="{{ quest.answer2 }}"/><label for="c2{{ quest.id }}">{{ quest.answer2 }}</label>
+                    <input type="checkbox" id="c3{{ quest.id }}" name="checks[]" value="{{ quest.answer3 }}"/><label for="c3{{ quest.id }}">{{ quest.answer3 }}</label>
+                </div>
+            {% endfor %}
+            <input type="submit" value="Submit">
+        </form>
+    {% else %}
+        <h1>Quiz completed</h1>
+    {% endif %}
+
+
+
+{% endblock %}
