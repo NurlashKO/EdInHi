@@ -60,7 +60,7 @@ def company_reg_view(request):
                 user.abstractuser.save()
                 user = authenticate(username=email, password=password)
                 login(request, user)
-                return render(request, "company/company.html")
+                return redirect('/company')
         else:
             return render(request, "registration/reg.html")
     else:
