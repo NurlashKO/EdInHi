@@ -27,8 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label for="contact_phone">Contact phone:</label>
-                    <input name="contact_phone" type="text" class="form-control"
-                           value="{{ user.contact_phone }}">
+                    <input name="contact_phone" type="text" class="form-control" value="{{ user.contact_phone }}">
                 </div>
                 <div class="form-group">
                     <label for="image">Image:</label>
@@ -41,15 +40,10 @@
                 <button type="submit" class="button special">Save</button>
                 <a href="{% url "index" %}" class="button">Back</a>
             </form>
-            <a href="{% url "company_add_vacancy" %}" class="button">Add Vacancy</a>
 
-            {% for vacancy in vacancies %}
-                <p>{{ vacancy.name }}</p>
-                <form action="{% url "company_delete_vacancy" vacancy.id %}" method="POST">
-                    {% csrf_token %}
-                    <input type="submit" value="Delete Vacancy"/>
-                </form>
-            {% endfor %}
+            <a href="{% url "company_add_vacancy" %}" class="button">Add Vacancy</a>
+            <a href="{% url "all_vacancies" %}" class="button">All Vacancies - {{ vacancies }}</a>
+
         </div>
     </div>
 </div>

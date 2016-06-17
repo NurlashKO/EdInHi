@@ -3,7 +3,7 @@ from django.forms import ModelForm
 from django.shortcuts import render, get_object_or_404, redirect
 from profile.forms import UploadFileForm
 
-from .models import Vacancy
+from .models import Vacancy, CompanyTask
 from .forms import CompanyForm, VacancyForm, TaskForm
 
 def company_view(request):
@@ -17,7 +17,9 @@ def company_view(request):
             return redirect('/company')
         else:
             return render(request, 'company/company.html',
-                          {'user': request.user.abstractuser, 'vacancies': request.user.abstractuser.vacancies.all()})
+                          {'user': request.user.abstractuser, 'vacancies': request.user.abstractuser.vacancies.all().count()})
+    else:
+        return redirect("company_reg")
 
 
 @login_required
@@ -27,7 +29,6 @@ def company_add_vacancy(request):
     if (request.method == "POST"):
         vform = VacancyForm(request.POST)
         tform = TaskForm(request.POST)
-
         if (vform.is_valid() and tform.is_valid()):
             vacancy = vform.save(commit=False)
             task = tform.save(commit=False)
@@ -50,3 +51,13 @@ def company_delete_vacancy(request, pk):
         vacancy.delete()
         request.user.abstractuser.save()
     return redirect("/company")
+
+@login_required
+def all_vacancies(request):
+    all = request.user.abstractuser.vacancies.all()
+    return render(request, 'vacancies.html', {'vacancies' : all})
+
+@login_required
+def show_vacancy(request, pk):
+    vacancy = get_object_or_404(Vacancy, pk=pk)
+    return render(request, 'vacancy.html', {'vacancy' : vacancy})
