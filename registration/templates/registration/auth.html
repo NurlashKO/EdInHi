@@ -1,27 +1,29 @@
-{%extends 'main_app/base.html' %}
+{% extends 'main_app/base.html' %}
 {% load staticfiles %}
 {% block title %}
     Log in
-{% endblock%}
+{% endblock %}
 {% block content %}
-<br><br><br><br><br>
-<div class="row">
-    <div class="col-sm-offset-4 col-sm-4">
-    <form data-toggle="validator" id="signInForm" role="form" method="POST">
-        {% csrf_token %}
-      <div class="form-group">
-        <label for="email">Email address:</label>
-        <input placeholder="example@example.com" name="email" type="email" class="form-control" id="email">
-      </div>
-      <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input placeholder="Password" data-minlength="6" name="password" type="password" class="form-control" id="pwd" >
-        <div class="help-block">Minimum of 6 characters</div>
-      </div>
-      <button type="submit" class="btn btn-info">Log in</button> &nbsp or &nbsp
-      <a href="{% url "reg" %}">Sign up</a>
-    </form>
+    <br><br><br><br><br>
+    <div class="row">
+        <div class="col-sm-offset-4 col-sm-4">
+            <form data-toggle="validator" id="signInForm" role="form" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input placeholder="example@example.com" name="email" type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input placeholder="Password" data-minlength="6" name="password" type="password"
+                           class="form-control" id="pwd">
+                    <div class="help-block">Minimum of 6 characters</div>
+                </div>
+                <button type="submit" class="btn btn-info">Log in</button>
+                &nbsp or &nbsp
+                <a href="{% url "reg" %}">Sign up</a>
+            </form>
+        </div>
     </div>
-</div>
-<br><br>
+    <br><br>
 {% endblock %}
