@@ -1,17 +1,19 @@
 from django.contrib.auth.decorators import login_required
-from django.forms import ModelForm
 from django.shortcuts import render, get_object_or_404, redirect
-from profile.forms import UploadFileForm
 
-from .models import Vacancy, CompanyTask
 from .forms import CompanyForm, VacancyForm, TaskForm
+from .models import Vacancy
+
 
 def company_view(request):
     cform = CompanyForm()
     if request.user.is_authenticated():
+        if request.user.abstractuser.is_company == False:
+            return redirect('/profile')
         if request.method == "POST":
             cform = CompanyForm(request.POST, request.FILES, instance=request.user.abstractuser)
             if cform.is_valid():
+                cform.logo = request.FILES['logo']
                 cform.save()
                 return redirect('/company')
             return redirect('/company')
@@ -39,7 +41,7 @@ def company_add_vacancy(request):
             request.user.abstractuser.vacancies.add(vacancy)
             request.user.abstractuser.save()
             return redirect('/company')
-    data = {'vform':vform, 'tform':tform}
+    data = {'vform': vform, 'tform': tform}
     return render(request, 'company/company_add_vacancy.html', data)
 
 
