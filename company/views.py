@@ -1,10 +1,9 @@
 from django.contrib.auth.decorators import login_required
-from django.forms import ModelForm
+from django.forms import ModelForm, modelformset_factory
 from django.shortcuts import render, get_object_or_404, redirect
 
-from company.models import Vacancy
-from profile.forms import UploadFileForm
-
+from company.models import Vacancy, CompanyTask
+from .forms import VacancyForm, TaskForm
 
 def company_view(request):
     if request.user.is_authenticated():
@@ -30,23 +29,37 @@ def company_view(request):
                           {'user': request.user.abstractuser, 'vacancies': request.user.abstractuser.vacancies.all()})
 
 
-class VacancyForm(ModelForm):
-    class Meta:
-        model = Vacancy
-        fields = ['name', 'description', 'salary']
-
-
 @login_required
 def company_add_vacancy(request):
-    form = VacancyForm(request.POST or None)
-    if form.is_valid():
-        vacancy = form.save(commit=False)
-        vacancy.save()
-        request.user.abstractuser.vacancies.add(vacancy)
-        request.user.abstractuser.save()
-        print(vacancy.name)
-        return redirect('/company')
-    return render(request, 'company/company_add_vacancy.html', {'form': form})
+    vform = VacancyForm()
+    tform = TaskForm()
+    if (request.method == "POST"):
+        vform = VacancyForm(request.POST)
+        tform = TaskForm(request.POST)
+
+        if (vform.is_valid() and tform.is_valid()):
+            vacancy = vform.save(commit=False)
+            task = tform.save(commit=False)
+            task.save()
+            vacancy.save()
+            vacancy.task.add(task)
+            vacancy.save()
+            request.user.abstractuser.vacancies.add(vacancy)
+            request.user.abstractuser.save()
+            return redirect('/company')
+        '''
+        vacancy_name = request.POST['vacancy_name']
+        vacancy_comment = request.POST['vacancy_comment']
+        vacancy_description = request.POST['vacancy_description']
+        vacancy_salary = request.POST['vacancy_salary']
+
+        task_name = request.POST['vacancy_name']
+        task_description = request.POST['vacancy_description']
+        task_salary = request.POST['vacancy_salary']
+        task_email
+        '''
+    data = {'vform':vform, 'tform':tform}
+    return render(request, 'company/company_add_vacancy.html', data)
 
 
 @login_required
