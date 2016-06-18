@@ -21,6 +21,11 @@
       <list>
         <option value="$MODULE_DIR$/company/templates" />
         <option value="$MODULE_DIR$/quiz/templates" />
+        <option value="$MODULE_DIR$/registration/templates" />
+        <option value="$MODULE_DIR$/skill/templates" />
+        <option value="$MODULE_DIR$/tasks/templates" />
+        <option value="$MODULE_DIR$/profile/templates" />
+        <option value="$MODULE_DIR$/main_app/templates" />
       </list>
     </option>
   </component>
