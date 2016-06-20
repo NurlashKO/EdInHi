@@ -12,7 +12,6 @@ class QuestionAndAnswer(models.Model):
 class Company(models.Model):
     QnA = models.ManyToManyField(QuestionAndAnswer)
 
-
 class Vacancy(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
