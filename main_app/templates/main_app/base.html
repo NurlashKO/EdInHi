@@ -34,6 +34,7 @@
                     {% if request.user.abstractuser.is_company == True %}
                         <li><a href="{% url "company" %}" class="button">Company Profile</a></li>
                     {% else %}
+                        <li><a href="{% url "all_companies" %}" class="button">All Companies</a></li>
                         <li><a href="{% url "profile" %}" class="button">Profile</a></li>
                     {% endif %}
                     <li><a href="{% url "sign_out" %}" class="button">Sign Out</a></li>

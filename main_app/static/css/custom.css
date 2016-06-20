@@ -1,3 +1,7 @@
+.container {
+   margin-top: 10%;
+}
+
 #banner {
     padding-left: 5%;
 }
@@ -33,6 +37,17 @@
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 1.5%;
 }
+
+.cards .company_box {
+    margin-bottom: 30%;
+}
+
+.cards .company_box .company_content {
+    padding: 9.6% 8%;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 1.5%;
+}
+
 
 .company_box a {
     color: white;

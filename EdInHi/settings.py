@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'profile',
     'company',
     'quiz',
+    'companies_app',
 ]
 
 MIDDLEWARE_CLASSES = [

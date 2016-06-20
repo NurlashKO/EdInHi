@@ -3,7 +3,6 @@ from skill.models import Skill
 from django.utils import timezone
 
 
-# Create your models here.
 class Task(models.Model):
     name = models.CharField(max_length = 200)
     description = models.TextField(max_length = 10000, default = "")

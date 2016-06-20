@@ -1,0 +1,14 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %}{{ company.name }}{% endblock %}
+
+{% block content %}
+    <br><br><br>
+    <p>{{ company.name }}</p>
+    <br>
+    <p>Current Vacancies :</p>
+    {% for vacancy in company.vacancies.all %}
+        <p>{{ vacancy.name }}</p>
+    {% endfor %}
+
+{% endblock %}

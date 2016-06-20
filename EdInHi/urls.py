@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^', include('main_app.urls')),
     url(r'^profile/', include('profile.urls')),
     url(r'^company/', include('company.urls')),
+    url(r'^companies/', include('companies_app.urls')),
     url(r'^task/', include('tasks.urls')),
     url(r'^quiz/', include('quiz.urls')),
 
