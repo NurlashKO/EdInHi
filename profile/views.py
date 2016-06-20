@@ -10,20 +10,22 @@ def profile_view(request):
             return redirect('/company')
         if request.method == "POST":
             form = UploadFileForm(request.POST, request.FILES)
+
+            new_first_name = request.POST['firstName']
+            new_last_name = request.POST['lastName']
+            new_phone_number = request.POST['phoneNumber']
+
+            newUser = request.user
+            newUser.first_name = new_first_name
+            newUser.last_name = new_last_name
+
+            newUser.abstractuser.phone = new_phone_number
+
             if form.is_valid():
-                new_first_name = request.POST['firstName']
-                new_last_name = request.POST['lastName']
-                new_phone_number = request.POST['phoneNumber']
-
-                newUser = request.user
-                newUser.first_name = new_first_name
-                newUser.last_name = new_last_name
-
                 newUser.abstractuser.profile_image = request.FILES['file']
-                newUser.abstractuser.phone = new_phone_number
 
-                newUser.save()
-                newUser.abstractuser.save()
+            newUser.save()
+            newUser.abstractuser.save()
 
         else:
             return render(request, 'profile/profile.html', {'user' : request.user})

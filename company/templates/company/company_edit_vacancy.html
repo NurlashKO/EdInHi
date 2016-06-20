@@ -1,0 +1,24 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %}Edit Vacancy{% endblock %}
+
+{% block content %}
+    <br><br><br>
+    <form method="POST">
+        {% csrf_token %}
+        <h4>
+            <input name="name" type="text" class="form-control" value="{{ vacancy.name }}">
+        </h4>
+        <h4>
+            <input name="description" type="text" class="form-control" value="{{ vacancy.description }}">
+        </h4>
+        <h4>
+            <input name="salary" type="number" class="form-control" value="{{ vacancy.salary }}">
+        </h4>
+        {% for each_task in vacancy.task.all %}
+            <h1>Task name - {{ each_task.name }}</h1>
+            <h1>Task description - {{ each_task.description }}</h1>
+        {% endfor %}
+        <input type="submit" value="Submit"/>
+    </form>
+{% endblock %}

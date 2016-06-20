@@ -9,7 +9,7 @@
         <h1>{{ vacancy.name }}</h1>
 
         <div class="form-group">
-            <form action="{% url "show_vacancy" vacancy.id %}" method="POST" style="display: inline-block;">
+            <form action="{% url "company_edit_vacancy" vacancy.id %}" method="POST" style="display: inline-block;">
                 {% csrf_token %}
                 <input type="submit" value="Edit Vacancy"/>
             </form>

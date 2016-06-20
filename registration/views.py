@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
+from company.models import WishList
 
 # Create your views here.
 
@@ -30,6 +31,11 @@ def reg_view(request):
             else:
                 user = User.objects.create_user(username=email, email=email, password=password)
                 user.save()
+
+                newWishlist = WishList()
+                newWishlist.user = user
+                newWishlist.save()
+
                 user = authenticate(username=email, password=password)
                 login(request, user)
                 return redirect('/profile')

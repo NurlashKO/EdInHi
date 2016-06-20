@@ -21,7 +21,4 @@ class Vacancy(models.Model):
     salary = models.CharField(max_length=100)
     required_skills = models.ManyToManyField(Skill, blank=True)
     task = models.ManyToManyField(CompanyTask, blank=True)
-    wishlist = models.ForeignKey(WishList)
-
-
-
+    wishlist = models.ForeignKey(WishList, blank=True, null=True)
