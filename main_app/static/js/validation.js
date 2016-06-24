@@ -1,3 +1,11 @@
+document.getElementById("re-pwd").onkeyup = function(){
+    checkField("re-pwd");
+}
+
+document.getElementById("re-pwd").onkeydown = function(){
+    checkField("re-pwd");
+}
+
 function checkField(id){
     var this_el = document.getElementById(id);
     if(!checkIfEmpty(id)) {
@@ -43,11 +51,12 @@ function checkIfEmpty(id){
     if(document.getElementById(id).value == "") {
         document.getElementById(id + "-err").innerHTML = msg;
         return true;
-    } else if(document.getElementById(id + "-err").innerHTML == msg) {
+    } 
+    else 
+    if(document.getElementById(id + "-err").innerHTML == msg) {
         document.getElementById(id + "-err").innerHTML = "";
         return false;
     }
-
 }
 
 function checkEmailFormat(id){
