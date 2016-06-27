@@ -4,6 +4,7 @@ from django.db.models.signals import post_save
 from company.models import Vacancy
 from skill.models import Skill
 from tasks.models import Task, CompanyTask
+from specialization.models import Specialization
 
 # Create your models here.
 

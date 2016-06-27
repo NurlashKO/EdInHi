@@ -1,0 +1,10 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %}Some{% endblock %}
+
+{% block content %}
+    <br><br><br>
+    {% for spec in all %}
+        <p>{{ spec.name }}</p>
+    {% endfor %}
+{% endblock %}

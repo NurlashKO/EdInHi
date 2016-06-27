@@ -2,12 +2,14 @@ from django.db import models
 from skill.models import Skill
 from django.utils import timezone
 
+from specialization.models import Specialization
 
 class Task(models.Model):
     name = models.CharField(max_length = 200)
     description = models.TextField(max_length = 10000, default = "")
     problem = models.TextField(max_length = 10000, default = "")
     pub_date = models.DateTimeField('date published', default = timezone.now)
+    specialization = models.ForeignKey(Specialization, blank=True)
 
 class CompanyTask(models.Model):
     name = models.CharField(max_length=200)

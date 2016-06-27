@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 # Register your models here.
 from .models import *
+from specialization.models import *
 
 class AbstractUserInline(admin.StackedInline):
     model = AbstractUser
