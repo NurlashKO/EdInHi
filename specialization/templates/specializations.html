@@ -6,5 +6,8 @@
     <br><br><br>
     {% for spec in all %}
         <p>{{ spec.name }}</p>
+        {% for skill in spec.skill_set.all %}
+            <h1>{{ skill.name }}</h1>
+        {% endfor %}
     {% endfor %}
 {% endblock %}
