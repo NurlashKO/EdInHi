@@ -7,7 +7,6 @@ from company.models import WishList, Vacancy
 @login_required
 def all_companies(request):
     allCompanies = AbstractUser.objects.filter(is_company=True)
-    print(request.user.wishlist.vacancy_set.all().count())
     return render(request, "companies/all_companies.html", {'all_companies' : allCompanies})
 
 @login_required
