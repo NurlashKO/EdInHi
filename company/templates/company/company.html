@@ -5,18 +5,15 @@
 
 <body>
 {% block content %}
-    <div class="container">
+    <div class="container profile">
         <div class="row uniform">
-            <div class="box form-box">
+            <div class="col-sm-offset-2 col-sm-8">
                 <div class="text-image-box">
-                <span class="image featured">
-                        {% if user.logo %}
-                            <img src="{{ user.logo.url }}" alt="My Image" style="width: 300px; height: 300px;">
-                        {% else %}
-                            <img src="{% static "images/temp.png" %}" style="width: 300px; height: 300px;">
-                        {% endif %}
-                </span>
-                    <div class="blur-bg"></div>
+                    {% if user.logo %}
+                        <img src="{{ user.logo.url }}" alt="My Image" style="width: 300px; height: 300px;">
+                    {% else %}
+                        <img src="{% static "images/temp.png" %}" style="width: 300px; height: 300px;">
+                    {% endif %}
                     <h3>Company</h3>
                 </div>
                 <form role="form" method="POST" enctype="multipart/form-data">
@@ -34,19 +31,15 @@
                         <input name="contact_phone" type="text" class="form-control" value="{{ user.contact_phone }}">
                     </div>
                     <div class="form-group">
-                        <div class="blur-bg"></div>
-                        <h3>Company</h3>
-                    </div>
-                    <div class="form-group">
                         <label for="image">Image:</label>
                         <input id="image" type="file" class="" name="logo">
                     </div>
-                    <button type="submit" class="button special">Save</button>
-                    <a href="{% url "index" %}" class="button">Back</a>
+                    <button type="submit" class="btn btn-info">Save</button>
+                    <a href="{% url "index" %}" class="btn btn-default">Back</a>
                 </form>
 
-                <a href="{% url "company_add_vacancy" %}" class="button">Add Vacancy</a>
-                <a href="{% url "all_vacancies" %}" class="button">All Vacancies - {{ vacancies }}</a>
+                <a href="{% url "company_add_vacancy" %}" class="btn btn-default">Add Vacancy</a>
+                <a href="{% url "all_vacancies" %}" class="btn btn-default">All Vacancies - {{ vacancies }}</a>
 
             </div>
         </div>
