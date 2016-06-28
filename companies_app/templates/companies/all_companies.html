@@ -3,24 +3,15 @@
 {% block title %}All Companies{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <section class="box">
-            <div class="box alt">
-                <div class="row no-collapse 50% uniform cards">
-                    {% for company in all_companies %}
-                        <div class="4u company_box">
-                            <a href="{% url "detail_company" company.id %}">
-                            <span class="company_content">
-                                <h3>{{ company.name }}</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                                    magna aliquam erat volutpat.</p>
-                            </span>
-                            </a>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
-    </div>
+    <br><br><br>
+    {% for company in all_companies %}
+        <h1>{{ company.name }}</h1>
+        <a href="{% url "detail_company" company.id %}">
+                <span class="company_content">
+                    <h3>{{ company.name }}</h3>
+                </span>
+        </a>
+
+    {% endfor %}
+
 {% endblock %}
