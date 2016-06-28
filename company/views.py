@@ -45,7 +45,6 @@ def company_add_vacancy(request):
     data = {'vform': vform, 'tform': tform}
     return render(request, 'company/company_add_vacancy.html', data)
 
-
 @login_required
 def company_delete_vacancy(request, pk):
     vacancy = get_object_or_404(Vacancy, pk=pk)

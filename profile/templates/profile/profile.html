@@ -8,41 +8,45 @@
     <div class="row">
         <div class="col-sm-4">
             {% if user.abstractuser.profile_image %}
-                <img src="{{ user.abstractuser.profile_image.url }}" alt="My Image" style="width: 300px; height: 300px;">
+                <img src="{{ user.abstractuser.profile_image.url }}" alt="My Image" style="width: 200px; height: 200px;">
             {% else %}
                 <img src="{% static "images/temp.png" %}">
             {% endif %}
         </div>
+        <br>
         <div class="col-sm-8">
             <form role="form" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <h4>
-                    <input name="firstName" type="text" class="form-control" value="{{ user.first_name }}">
+                  <input name="firstName" type="text" class="form-control" placeholder="First name"
+                  value="{{ user.first_name }}" style = "width: 400px">
                 </h4>
+                <br>
                 <h4>
-                    <input name="lastName" type="text" class="form-control" value="{{ user.last_name }}">
+                  <input name="lastName" type="text" class="form-control" placeholder="Last name"
+                  value="{{ user.last_name }}" style = "width: 400px">
                 </h4>
-                <table class="table">
-                    <tr>
-                        <td>Phone</td>
-                        <td>
-                            <input name="phoneNumber" type="number" class="form-control"
-                                   value="{{ user.abstractuser.phone }}">
-                        </td>
-                    </tr>
-                    <input id="image" type="file" class="" name="file">
-                </table>
+                <br>
+                <h4>
+                  <input name="phoneNumber" type="number" class="form-control" placeholder= "Phone number"
+                  value="{{ user.abstractuser.phone }}" style = "width: 400px">
+                </h4>
+                <br>
+                <h4>
+                  <input id="image" type="file" class="" name="file">
+                </h4>
+                <br>
                 <button type="submit" class="btn btn-info">Save</button>
                 <a href="{% url "index" %}" class="btn btn-default">Back</a>
             </form>
-
+            <br>
             <p>Vacancies in WishList : </p>
 
             {% for vacancy in user.wishlist.vacancy_set.all %}
                 <p><a href="{% url 'detail_vacancy' vacancy.id%}">{{ vacancy.name }}</a></p>
             {% endfor %}
+            <br><br><br><br>
 
         </div>
     </div>
-    <br><br>
 {% endblock %}
