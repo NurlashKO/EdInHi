@@ -1,13 +1,16 @@
 {% extends 'main_app/base.html' %}
 
-{% block title %}Some{% endblock %}
+{% block title %}Specializations{% endblock %}
 
 {% block content %}
-    <br><br><br>
+    <br><br><br><br><br><br>
     {% for spec in all %}
         <p>{{ spec.name }}</p>
         {% for skill in spec.skill_set.all %}
             <h1>{{ skill.name }}</h1>
+        {% endfor %}
+        {% for task in spec.task_set.all %}
+            <h3>{{ task.name }}</p>
         {% endfor %}
     {% endfor %}
 {% endblock %}
