@@ -15,5 +15,6 @@ class Skill(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        self.id_in_spec = self.specialization.skill_set.all().count()+1
+        if not self.id_in_spec:
+            self.id_in_spec = self.specialization.skill_set.all().count()+1
         super(Skill, self).save(*args, **kwargs)
