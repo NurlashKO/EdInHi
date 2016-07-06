@@ -11,13 +11,13 @@
         {% block title %}
         {% endblock %}
     </title>
-    
+
     <link rel="stylesheet" href="{% static "css/main.css" %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Heebo:400,300|Raleway:500,400,300' rel='stylesheet' type='text/css'>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>        
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 </head>
 
@@ -34,6 +34,7 @@
                             <li><a href="{% url "company" %}" >Company Profile</a></li>
                         {% else %}
                             <li><a href="{% url "all_companies" %}" >All Companies</a></li>
+                            <li><a href="{% url "all_users" %}">All Users</a></li>
                             <li><a href="{% url "profile" %}" >Profile</a></li>
                         {% endif %}
                         <li><a href="{% url "sign_out" %}" >Sign Out</a></li>
@@ -49,7 +50,7 @@
 
         {% block content %}
         {% endblock %}
-        
+
 
         <footer class="footer">
           <div class="container">
