@@ -5,226 +5,146 @@
     EdInHi
 {% endblock%}
 
+{% block content %}                    
 
-{% block content %}
+    <section class="banner">
+        <h2>EdInHi</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+    </section>
 
-                        <!--
-        Home Slider
-        ==================================== -->
-        <section id="home">     
-            <div id="home-carousel" class="carousel slide" data-interval="false">
-
-                <div class="carousel-inner">
-
-                    <div class="item active"  style="background-image: url('{% static "img/slider/bg2.jpg" %}')" >
-                        <div class="carousel-caption">
-                            <div class="">
-                                <h2>EdInHi</h2>
-                                <blockquote>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam.</blockquote>
-                                <label>SOME DUDE</label>
-                            </div>
-                        </div>
-                    </div>                                  
-                </div>
-            </div>
-        </section>
-        <!--
-        End #home Slider
-        ========================== -->
-
-        
-        <!--
-        #about
-        ========================== -->
-        <section id="about">
-            <div class="container">
-                <div class="row">
-
-                    <div class="section-title text-center wow fadeInUp">
-                        <h2>About Us</h2>    
-                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam. Accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
+    <section class="about">
+        <table>
+            <h1>About us</h1>
+            <tr>
+                <td>
+                    <div class="icons">
+                        &#123;
                     </div>
-                    
-                    <div class="about-us text-center wow fadeInDown">
-                        <img src="{% static "img/about.png" %}" alt="About Us" class="img-responsive">
+                    <h3>Education</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                </td>
+                <td>
+                    <div class="icons">
+                        &#104;
                     </div>
-                </div>
-            </div>
-        </section>
-        <!--
-        End #about
-        ========================== -->
-
-        <section id="quotes">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title text-center wow fadeInDown">
-                            <h2>Skills</h2>
-                        </div>
+                    <h3>Internship</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                </td>
+                <td>
+                    <div class="icons">
+                        &#112;
                     </div>
-                </div>
-                <div class="row">
+                    <h3>Hire</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                </td>
+            </tr>
+        </table>
+    </section>
 
-                    <div class="col-md-6 col-sm-12 wow fadeInLeft">
-                        <div class="media">
-                            <a href="#" class="pull-left">
-                                <img src="{% static "img/icons/monitor.png" %}" class="media-object" alt="Monitor">
-                            </a>
-                            <div class="media-body">
-                                <h3>Vorem amet intuitive</h3>
-                                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam.</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-6 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="media">
-                            <a href="#" class="pull-left">
-                                <img src="{% static "img/icons/cog.png" %}" alt="Cog">
-                            </a>
-                            <div class="media-body">
-                                <h3>Vorem amet intuitive</h3>
-                                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam.</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-                    <div class="col-md-6 col-sm-12 wow fadeInLeft">
-                        <div class="media">
-                            <a href="#" class="pull-left">
-                                <img src="{% static "img/icons/ruler.png" %}" alt="Ruler">
-                            </a>
-                            <div class="media-body">
-                                <h3>Vorem amet intuitive</h3>
-                                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-sm-12 wow fadeInRight" data-wow-delay="0.2s">
-                        <div class="media">
-                            <a href="#" class="pull-left">
-                                <img src="{% static "img/icons/camera.png" %}" alt="Camera">
-                            </a>
-                            <div class="media-body">
-                                <h3>Vorem amet intuitive</h3>
-                                <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div> <!-- end .row -->
-            </div> <!-- end .container -->
-        </section>
-
-        <!--
-        #Portfolio
-        ========================== -->
-        
-        <section id="portfolio">
-
-            <div class="section-title text-center wow fadeInDown">
-                <h2>Companies</h2>
-            </div>
-
-            <div id="projects" class="clearfix">
-
+    <section class="companies">
+        <div class="company-box">
+            <h1>Companies</h1>
             <table>
                 <tr>
                     <td>
-                        <figure class="mix portfolio-item app">
-                            <a href="#"><img class="img-responsive" src="{% static "img/portfolio/halyk.png" %}" alt="Portfolio Item"></a>
-                            
-                            <figcaption class="mask">
-                                <h3>Awesome Image</h3>
-                                <span>Photography</span>
-                            </figcaption>
-                        </figure>
-                    </td>                        
+                        <a href="#">
+                            <img src="{% static "images/kazkom.png" %}">
+                        </a>
+                    </td>
                     <td>
-                        <figure class="mix portfolio-item app">
-                            <a href="#"><img class="img-responsive" src="{% static "img/portfolio/kaspi.png" %}" alt="Portfolio Item"></a>
-                            
-                            <figcaption class="mask">
-                                <h3>Awesome Image</h3>
-                                <span>Photography</span>
-                            </figcaption>
-                        </figure>
-                    </td>                         
+                        <a href="#">
+                            <img src="{% static "images/KMG.png" %}">
+                        </a>                        
+                    </td>
                     <td>
-                        <figure class="mix portfolio-item app">
-                            <a href="#"><img class="img-responsive" src="{% static "img/portfolio/kazmunay.png" %}" alt="Portfolio Item"></a>
-                            
-                            <figcaption class="mask">
-                                <h3>Awesome Image</h3>
-                                <span>Photography</span>
-                            </figcaption>
-                        </figure>
-                    </td>                        
-                    <td>
-                        <figure class="mix portfolio-item app">
-                            <a href="#"><img class="img-responsive" src="{% static "img/portfolio/micro.png" %}" alt="Portfolio Item"></a>
-                            
-                            <figcaption class="mask">
-                                <h3>Awesome Image</h3>
-                                <span>Photography</span>
-                            </figcaption>
-                        </figure>
-                    </td>                        
+                        <a href="#">
+                            <img src="{% static "images/NBK.png" %}">
+                        </a>                        
+                    </td>
                 </tr>
                 <tr>
                     <td>
-                        <figure class="mix portfolio-item app">
-                            <a href="#"><img class="img-responsive" src="{% static "img/portfolio/samruk.png" %}" alt="Portfolio Item"></a>
-                            
-                            <figcaption class="mask">
-                                <h3>Awesome Image</h3>
-                                <span>Photography</span>
-                            </figcaption>
-                        </figure>
-                    </td>                        
+                        <a href="#">
+                            <img src="{% static "images/kcell.png" %}">
+                        </a>
+                    </td>
                     <td>
-                        <figure class="mix portfolio-item app">
-                            <a href="#"><img class="img-responsive" src="{% static "img/portfolio/atf.png" %}" alt="Portfolio Item"></a>
-                            
-                            <figcaption class="mask">
-                                <h3>Awesome Image</h3>
-                                <span>Photography</span>
-                            </figcaption>
-                        </figure>
-                    </td>                        
+                        <a href="#">
+                            <img src="{% static "images/ATFBank.png" %}">  
+                        </a>                        
+                    </td>
                     <td>
-                        <figure class="mix portfolio-item app">
-                            <a href="#"><img class="img-responsive" src="{% static "img/portfolio/kazkom.png" %}" alt="Portfolio Item"></a>
-                            
-                            <figcaption class="mask">
-                                <h3>Awesome Image</h3>
-                                <span>Photography</span>
-                            </figcaption>
-                        </figure>
-                    </td>                        
-                    <td>
-                        <figure class="mix portfolio-item app">
-                            <a href="#"><img class="img-responsive" src="{% static "img/portfolio/kcell.png" %}" alt="Portfolio Item"></a>
-                            
-                            <figcaption class="mask">
-                                <h3>Awesome Image</h3>
-                                <span>Photography</span>
-                            </figcaption>
-                        </figure>
-                    </td>                        
+                        <a href="#">
+                            <img src="{% static "images/bankastana.png" %}">
+                        </a>                        
+                    </td>
                 </tr>
             </table>
+        </div>
+    </section>
 
-            </div> <!-- end #projects -->
-
-        </section>
-        <!--
-        End #Portfolio
-        ========================== -->
-
+    <section class="specs">
+        <div class="specs-box">
+            <h1>Specializations</h1>
+            <table>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <label>Lorem</label>
+                            <img src="{% static "images/spec1.jpeg" %}"> 
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <label>Ipsum</label>
+                            <img src="{% static "images/spec2.jpeg" %}"> 
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <label>Dolor</label>
+                            <img src="{% static "images/spec3.jpeg" %}"> 
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <label>Sit amet</label>
+                            <img src="{% static "images/spec4.jpeg" %}"> 
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">
+                            <label>Lorem</label>
+                            <img src="{% static "images/spec5.jpeg" %}"> 
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <label>Ipsum</label>
+                            <img src="{% static "images/spec6.jpeg" %}"> 
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <label>Dolor</label>
+                            <img src="{% static "images/spec7.jpeg" %}"> 
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#">
+                            <label>Sit amet</label>
+                            <img src="{% static "images/spec8.jpeg" %}"> 
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
 
 {% endblock %}

@@ -4,18 +4,18 @@
     Log in
 {% endblock %}
 {% block content %}
-    <div class="container form-box">
+    <div class="container container-main form-box">
         <div class="row">
             <div class="col-sm-offset-3 col-sm-6">
                 <form data-toggle="validator" id="signInForm" role="form" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
                         <label>Email</label>
-                        <input placeholder="example@mail.com" name="email" type="email" class="form-control" id="email">
+                        <input name="email" type="email" class="form-control" id="email">
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input placeholder="password" data-minlength="6" name="password" type="password"
+                        <input data-minlength="6" name="password" type="password"
                                class="form-control" id="pwd">
                     </div>
                     <div class="button-group">

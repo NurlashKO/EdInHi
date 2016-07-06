@@ -6,155 +6,56 @@
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <title>
         {% block title %}
         {% endblock %}
     </title>
-
-    <!-- Fontawesome -->
-    <link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
-    <!-- Fancybox -->
-    <link rel="stylesheet" href="{% static "css/jquery.fancybox.css" %}">
-    <!-- Animate -->
-    <link rel="stylesheet" href="{% static "css/animate.css" %}">
-    <!-- Main Stylesheet -->
+    
     <link rel="stylesheet" href="{% static "css/main.css" %}">
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="{% static "css/custom.css" %}">
-    <!-- Main Responsive -->
-    <link rel="stylesheet" href="{% static "css/responsive.css" %}">
-       
-    <!-- Modernizer Script for old Browsers -->
-    <script src="{% static "js/vendor/modernizr-2.6.2.min.js" %}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Heebo:400,300|Raleway:500,400,300' rel='stylesheet' type='text/css'>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>        
 
 </head>
 
 <body>
 
-        <!--
-        Fixed Navigation
-        ==================================== -->
-        <header id="navigation" class="navbar-fixed-top animated-nav">
-            <div class="container">
-
+        <nav class="navbar navbar-fixed-top navbar-top">
+            <div class="container-fluid">
                 <div class="navbar-header">
-                    <!-- responsive nav button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!-- /responsive nav button -->
-
-                    <!-- logo -->
-                    <h1 class="navbar-brand">
-                        <a href="{% url "index" %}">
-                            <img src="{% static "img/logo.png" %}" alt="Kasper Logo">
-                        </a>
-                    </h1>
-                    <!-- /logo -->
-
-                    </div>
-
-                    <!-- main nav -->
-                    <nav class="collapse navigation navbar-collapse navbar-right" role="navigation">
-                        <ul id="nav" class="nav navbar-nav">
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.abstractuser.is_company == True %}
-                                    <li><a href="{% url "company" %}" class="btn">Company Profile</a></li>
-                                {% else %}
-                                    <li><a href="{% url "all_companies" %}" class="btn">All Companies</a></li>
-                                    <li><a href="{% url "profile" %}" class="btn">Profile</a></li>
-                                {% endif %}
-                                <li><a href="{% url "sign_out" %}" class="btn">Sign Out</a></li>
-                            {% else %}
-                                <li><a href="{% url "reg" %}" class="btn">Sign Up</a></li>
-                                <li><a href="{% url "company_reg" %}" class="btn">Sign Up As Company</a></li>
-                                <li><a href="{% url "auth" %}" class="btn"></span>Login</a></li>
-                            {% endif %}
-                        </ul>
-                    </nav>
-                    <!-- /main nav -->
+                  <a class="navbar-brand" href="{% url "index" %}">EdInHi</a>
                 </div>
-
+                <ul class="nav navbar-nav nav-right">
+                    {% if request.user.is_authenticated %}
+                        {% if request.user.abstractuser.is_company == True %}
+                            <li><a href="{% url "company" %}" >Company Profile</a></li>
+                        {% else %}
+                            <li><a href="{% url "all_companies" %}" >All Companies</a></li>
+                            <li><a href="{% url "profile" %}" >Profile</a></li>
+                        {% endif %}
+                        <li><a href="{% url "sign_out" %}" >Sign Out</a></li>
+                    {% else %}
+                        <li class="active"><a href="{% url "reg" %}" >Sign Up</a></li>
+                        <li><a href="{% url "company_reg" %}" >Sign Up As Company</a></li>
+                        <li><a href="{% url "auth" %}">Login</a></li>
+                    {% endif %}
+                </ul>
             </div>
-        </header>
-        <!--
-        End Fixed Navigation
-        ==================================== -->
+        </nav>
 
 
         {% block content %}
         {% endblock %}
         
 
-        <!--
-        #footer
-        ========================== -->
-        <footer id="footer" class="text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-
-                        <div class="footer-logo wow fadeInDown">
-                            <img src="{% static "img/logo.png" %}" alt="logo">
-                        </div>
-
-                        <div class="footer-social wow fadeInUp">
-                            <h3>We are social</h3>
-                            <ul class="text-center list-inline">
-                                <li><a href="http://goo.gl/RqhEjP"><i class="fa fa-facebook fa-lg"></i></a></li>
-                                <li><a href="http://goo.gl/hUfpSB"><i class="fa fa-twitter fa-lg"></i></a></li>
-                                <li><a href="http://goo.gl/r4xzR4"><i class="fa fa-google-plus fa-lg"></i></a></li>
-                                <li><a href="http://goo.gl/k9zAy5"><i class="fa fa-dribbble fa-lg"></i></a></li>
-                            </ul>
-                        </div>
-
-                        <div class="copyright">
-                           
-                            <p>Theme by <a href="http://graphberry.com">GraphBerry.com</a> Developed by <a target="_blank" href="http://www.themefisher.com">Themefisher</a></p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">&copy; EdInHi. All rights reserved.</p>
+          </div>
         </footer>
-        <!--
-        End #footer
-        ========================== -->
-
-
-        <!--
-        JavaScripts
-        ========================== -->
-        
-        <!-- main jQuery -->
-        <script src="{% static "js/vendor/jquery-1.11.1.min.js" %}"></script>
-        <!-- Bootstrap -->
-        <script src="{% static "js/bootstrap.min.js" %}"></script>
-        <!-- jquery.nav -->
-        <script src="{% static "js/jquery.nav.js" %}"></script>
-        <!-- Portfolio Filtering -->
-        <script src="{% static "js/jquery.mixitup.min.js" %}"></script>
-        <!-- Fancybox -->
-        <script src="{% static "js/jquery.fancybox.pack.js" %}"></script>
-        <!-- Parallax sections -->
-        <script src="{% static "js/jquery.parallax-1.1.3.js" %}"></script>
-        <!-- jQuery Appear -->
-        <script src="{% static "js/jquery.appear.js" %}"></script>
-        <!-- countTo -->
-        <script src="{% static "js/jquery-countTo.js" %}"></script>
-        <!-- WOW script -->
-        <script src="{% static "js/wow.min.js" %}"></script>
-        <!-- theme custom scripts -->
-        <script src="{% static "js/main.js" %}"></script>
     </body>
 
 
