@@ -27,6 +27,7 @@
         <option value="$MODULE_DIR$/profile/templates" />
         <option value="$MODULE_DIR$/main_app/templates" />
         <option value="$MODULE_DIR$/companies_app/templates" />
+        <option value="$MODULE_DIR$/specialization/templates" />
       </list>
     </option>
   </component>
