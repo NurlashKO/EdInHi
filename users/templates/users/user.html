@@ -1,7 +1,7 @@
 {% extends "main_app/base.html" %}
 {% load staticfiles %}
 
-{% block title %} Profile {% endblock %}
+{% block title %} User {% endblock %}
 
 {% block content %}
     <br><br><br><br><br>
@@ -16,47 +16,31 @@
                 <img class="img-rounded" src="{% static "images/avatarTemp.png" %}" alt="My Image" style="width: 200px; height: 200px;">
             {% endif %}
                 <br>
-                <h4>
-                    <b>Upload Avatar</b>
-                  <input id="image" type="file" class="" name="file">
-                </h4>
             </div>
 
         <div class="col-md-6">
             <h1> <b> Personal Information </b> </h1>
-                {% csrf_token %}
                 <h4>
                     <b>First Name</b>
-                  <input name="firstName" type="text" class="input-lg form-control" placeholder="First name"
-                  value="{{ user.first_name }}">
+                  <h3>{{ user.first_name }}</h3>
                 </h4>
-                <br>
                 <h4>
                     <b>Last Name</b>
-                  <input name="lastName" type="text" class="input-lg form-control" placeholder="Last name"
-                  value="{{ user.last_name }}">
+                  <h3>{{ user.last_name }}</h3>
                 </h4>
-                <br>
                 <h4>
                     <b>University/School</b>
-                  <input name="organization" type="text" class="input-lg form-control" placeholder= "Where are you studying?"
-                  value="{{ user.abstractuser.organization }}">
+                  <h3>{{ user.abstractuser.organization }}</h3>
                 </h4>
-                <br>
                 <h4>
                     <b>Experience</b>
-                  <input name="experience" type="text" class="input-lg form-control" placeholder= "Which companies have you worked at?"
-                  value="{{ user.abstractuser.experience }}">
+                  <h3>{{ user.abstractuser.experience }}</h3>
                 </h4>
-                <br>
                 <h4>
                     <b>Phone Number</b>
-                  <input name="phoneNumber" type="text" class="input-lg form-control" placeholder= "Phone number"
-                  value="{{ user.abstractuser.phone }}">
+                  <h3>{{ user.abstractuser.phone }}</h3>
                 </h4>
-                <br>
-                <button type="submit" class="btn btn-info">Save</button>
-                <a href="{% url "index" %}" class="btn btn-default">Back</a>
+                <a href="{% url "all_users" %}" class="btn btn-default">Back</a>
             </form>
             <br>
             <!--
