@@ -17,5 +17,5 @@ def specialization_view(request, pk):
         for passed_skill in passed_skills:
             if passed_skill == skill
                 passed++
-    progress = passed/skills.all.count()
+    progress = (passed/skills.all.count()) * 100
     return render(request, 'specialization/specialization.html', {'specialization' : specialization, 'progress' : progress})
