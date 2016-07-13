@@ -6,11 +6,6 @@ class Skill(models.Model):
     description = models.TextField()
     media_books = models.ManyToManyField(Book, blank=True)
     media_video = models.ManyToManyField(Video, blank=True)
-    id_in_spec = models.IntegerField(blank=True)
 
     def __str__(self):
         return self.name
-
-    def save(self, *args, **kwargs):
-        self.id_in_spec = self.specialization.skill_set.all().count()+1
-        super(Skill, self).save(*args, **kwargs)
