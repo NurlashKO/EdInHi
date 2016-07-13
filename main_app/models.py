@@ -26,8 +26,8 @@ class AbstractUser(models.Model):
     send_email_about_new_work = models.BooleanField(default=True)
     profile_image = models.ImageField(upload_to='Images/', blank=True, null=True)
     data_of_birth = models.DateField(null=True, blank=True)
-    passed_skills = models.ForeignKey(Skill, on_delete=models.CASCADE, null=True, blank=True)
-    wishlist = models.ManyToManyField(wishSpec, blank=True, null=True)
+    # passed_skills = models.ForeignKey(Skill, on_delete=models.CASCADE, null=True, blank=True)
+    wishlist = models.ManyToManyField(wishSpec, blank=True)
 
     # MAIN COMPANY
     name = models.CharField(max_length=100, null=True, blank=True)
