@@ -11,9 +11,9 @@
 <div class="row">
 	<div class="container">
 		<a href="{% url 'all_specializations' %}"> К списку специализаций </a>
-		<div class="pull-right"> Добавили в wishlist : {{ specialization.in_wishlist }}  </div>
+		<div class="pull-right"> Добавили в wishlist : {{ specialization.in_wishlist_of_users }}  </div>
 	</br>
-		<div class="pull-right"> Получили специализацию : {{ specialization.finished}}  </div>
+		<div class="pull-right"> Получили специализацию : {{ specialization.users.all.count}}  </div>
 
 		<h1>{{specialization.name}}</h1>
 
@@ -22,7 +22,7 @@
     			60%
   			</div>
 		</div>
-		<h3> specialization.description</h3>
+		<h3> {{specialization.description}}</h3>
 
 		<a class="btn btn-primary" href=""> Добавить в Wishlist </a>
 		<h1> Скиллы требуемые для получения специализации </h1>

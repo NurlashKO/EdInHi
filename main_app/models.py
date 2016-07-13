@@ -9,7 +9,8 @@ from specialization.models import Specialization
 # Create your models here.
 
 'try to do one-to-one relation'
-
+class wishSpec(models.Model):
+    wish_spec_id = models.IntegerField(blank=True, null = True)
 
 class AbstractUser(models.Model):
     # Connect To Django authorization
@@ -26,6 +27,7 @@ class AbstractUser(models.Model):
     profile_image = models.ImageField(upload_to='Images/', blank=True, null=True)
     data_of_birth = models.DateField(null=True, blank=True)
     passed_skills = models.ForeignKey(Skill, on_delete=models.CASCADE, null=True, blank=True)
+    wishlist = models.ManyToManyField(wishSpec, blank=True, null=True)
 
     # MAIN COMPANY
     name = models.CharField(max_length=100, null=True, blank=True)
