@@ -1,15 +1,98 @@
 {% extends 'main_app/base.html' %}
+{% load staticfiles %}
 
 {% block title %}Specialization{% endblock %}
 
 {%block content%}
+<link rel="stylesheet" href="{% static "css/specialization.css" %}">
+
 <br><br><br><br><br>
-<h1>{{specialization.name}}</h1>
-{%  for task in specialization.task_set.all %}
-<h1>{{task.name}}</h1>
-{% endfor %}
-{%  for skill in specialization.skill_set.all %}
-<h1>{{skill.name}}</h1>
-{% endfor %}
+
+<div class="row">
+	<div class="container">
+		<a href="{% url 'all_specializations' %}"> К списку специализаций </a>
+		<div class="pull-right"> Добавили в wishlist : {{ specialization.in_wishlist}}  </div>
+	</br>
+		<div class="pull-right"> Получили специализацию : {{ specialization.finished}}  </div>
+
+		<h1>{{specialization.name}}</h1>
+
+		<div class="progress">
+  			<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+    			60%
+  			</div>
+		</div>
+		<h3> specialization.description</h3>
+
+		<a class="btn btn-primary" href=""> Добавить в Wishlist </a>
+		<h1> Скиллы требуемые для получения специализации </h1>
+
+		<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-md-4">
+            <div class="post">
+                <div class="post-img-content">
+                    <img src="http://placehold.it/460x250/e67e22/ffffff&text=HTML5" class="img-responsive" />
+                    <span class="post-title"><b>Make a Image Blur Effects With</b><br />
+                        <b>CSS3 Blur</b></span>
+                </div>
+                <div class="content">
+                    <div>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                        unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </div>
+                    <div>
+                        <a href="http://www.jquery2dotnet.com/2014/01/jquery-highlight-table-row-and-column.html" class="btn btn-warning btn-sm">Изучить!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <div class="post">
+                <div class="post-img-content">
+                    <img src="http://placehold.it/460x250/2980b9/ffffff&text=CSS3" class="img-responsive" />
+                    <span class="post-title"><b>Make a Image Blur Effects With</b><br />
+                        <b>CSS3 Blur</b></span>
+                </div>
+                <div class="content">
+                    <div>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                        unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </div>
+                    <div>
+                        <a href="http://www.jquery2dotnet.com/2013/11/share-social-media-round-buttons.html" class="btn btn-primary btn-sm">Изучить!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <div class="post">
+                <div class="post-img-content">
+                    <img src="http://placehold.it/460x250/47A447/ffffff&text=Python" class="img-responsive" />
+                    <span class="post-title"><b>Make a Image Blur Effects With</b><br />
+                        <b>CSS3 Blur</b></span>
+                </div>
+                <div class="content">
+                    <div>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                        unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </div>
+                    <div>
+                        <a href="http://www.jquery2dotnet.com/2013/07/cool-social-sharing-button-using-css3.html" class="btn btn-success btn-sm">Изучить!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+		{%  for skill in specialization.skill_set.all %}
+		<h1>{{skill.name}}</h1>
+		{% endfor %}
+	</div>
+</div>
 
 {%endblock%}
