@@ -10,4 +10,12 @@ def all_specializations_view(request):
 
 def specialization_view(request, pk):
     specialization = get_object_or_404(Specialization, pk = pk)
-    return render(request, 'specialization/specialization.html', {'specialization' : specialization})
+    skills = specialization.skills.all()
+    passed_skills = request.user.AbstractUser.passed_skills.all()
+    passed = 0
+    for skill in skills:
+        for passed_skill in passed_skills:
+            if passed_skill == skill
+                passed++
+    progress = passed/skills.all.count()
+    return render(request, 'specialization/specialization.html', {'specialization' : specialization, 'progress' : progress})
