@@ -6,6 +6,7 @@ class Skill(models.Model):
     description = models.TextField()
     media_books = models.ManyToManyField(Book, blank=True)
     media_video = models.ManyToManyField(Video, blank=True)
+    spec_logo = models.ImageField(upload_to='Images/skill_logo', blank=True, null=True)
 
     def __str__(self):
         return self.name
