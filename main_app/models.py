@@ -24,6 +24,7 @@ class AbstractUser(models.Model):
     organization = models.CharField(max_length=100, null=True, blank=True)
     hide_contact_info = models.BooleanField(default=True)
     send_email_about_new_work = models.BooleanField(default=True)
+    worked_at = models.CharField(max_length=250, null=True, blank=True)
     profile_image = models.ImageField(upload_to='Images/', blank=True, null=True)
     data_of_birth = models.DateField(null=True, blank=True)
     # passed_skills = models.ForeignKey(Skill, on_delete=models.CASCADE, null=True, blank=True)
