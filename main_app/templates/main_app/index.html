@@ -7,13 +7,25 @@
 
 {% block content %}                    
 
+    <script>
+        $(document).ready(function (){
+            $("#click").click(function (){
+                $('html, body').animate({
+                    scrollTop: $("#specs").offset().top
+                }, 2000);
+            });
+        });
+    </script>
     <section class="banner">
         <h2>EdInHi</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.</p>
+
+          <h3><button class="btn btn-info" id="click"> Специализации </button></h3>
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p> -->
     </section>
 
     <section class="about">
+
         <table>
             <h1>About us</h1>
             <tr>
@@ -87,7 +99,7 @@
         </div>
     </section>
 
-    <section class="specs">
+    <section class="specs" id="specs">
         <div class="specs-box">
             <h1>Specializations</h1>
             <table>
