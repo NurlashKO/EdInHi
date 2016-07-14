@@ -1,20 +1,15 @@
 from django.db import models
 from media.models import Book, Video
-
-from specialization.models import Specialization
+from django.contrib.auth.models import User
 
 class Skill(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
     media_books = models.ManyToManyField(Book, blank=True)
     media_video = models.ManyToManyField(Video, blank=True)
-    specialization = models.ForeignKey(Specialization, blank=True)
-    id_in_spec = models.IntegerField(blank=True)
+    spec_logo = models.ImageField(upload_to='Images/skill_logo', blank=True, null=True)
+    short_description = models.TextField(max_length=250, null=True, blank="")
 
+    solved_users = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     def __str__(self):
         return self.name
-
-    def save(self, *args, **kwargs):
-        if not self.id_in_spec:
-            self.id_in_spec = self.specialization.skill_set.all().count()+1
-        super(Skill, self).save(*args, **kwargs)

@@ -1,15 +1,55 @@
 {% extends 'main_app/base.html' %}
+{% load staticfiles %}
 
 {% block title %}Specialization{% endblock %}
 
 {%block content%}
+<link rel="stylesheet" href="{% static "css/specialization.css" %}">
+
 <br><br><br><br><br>
-<h1>{{specialization.name}}</h1>
-{%  for task in specialization.task_set.all %}
-<h1>{{task.name}}</h1>
-{% endfor %}
-{%  for skill in specialization.skill_set.all %}
-<h1>{{skill.name}}</h1>
-{% endfor %}
+
+<div class="row">
+	<div class="container">
+		<a href="{% url 'all_specializations' %}"> К списку специализаций </a>
+		<div class="pull-right"> Добавили в wishlist : {{ specialization.in_wishlist_of_users }}  </div>
+	</br>
+		<div class="pull-right"> Получили специализацию : {{ specialization.users.all.count}}  </div>
+
+		<h1>{{specialization.name}}</h1>
+
+		<div class="progress">
+  			<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
+    			{{progress}}%
+  			</div>
+		</div>
+		<h3> {{specialization.description}}</h3>
+
+		<a class="btn btn-primary" href=""> Добавить в Wishlist </a>
+		<h1> Скиллы требуемые для получения специализации </h1>
+
+		<div class="container">
+    <div class="row">
+    	{%  for skill in specialization.skills.all %}
+        <div class="col-sm-4 col-md-4">
+            <div class="post">
+                <div class="post-img-content">
+                    <img src="{{ skill.spec_logo.url }}" class="img-responsive" />
+                    <span class="post-title"><b>{% if skill in passed_skills %} Passed {% else %} Unpassed {% endif %}</b><br /></span>
+                </div>
+                <div class="content">
+                    <div>
+                        {{ skill.short_description }}
+                    </div>
+                    <div>
+                        <a href="{% url 'skill' skill.id %}" class="btn btn-warning btn-sm">Изучить!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+	</div>
+</div>
 
 {%endblock%}
