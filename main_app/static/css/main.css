@@ -15,7 +15,7 @@ html {
 }
 
 label, a, li, 
-html button {
+.btn {
   font-family: 'Heebo', sans-serif;
   font-weight: 300;
 }
@@ -34,7 +34,7 @@ body {
 }
 
 .navbar-top {
-  background-color: rgb(45,168,156);
+  background-color: #2DA89C;
   width: 100%;
   padding: 0 20%;
 }
@@ -45,7 +45,7 @@ body {
 
 .navbar-top a:hover {
   color: rgb(255,255,255);
-  background-color: rgb(45,168,156);
+  background-color: #2DA89C;
 }
 
 .nav.navbar-nav {
@@ -54,7 +54,7 @@ body {
 
 .nav.navbar-nav a:hover {
   color: rgb(220,222,172);
-  background-color: rgb(45,168,156);
+  background-color: #2DA89C;
 }
 
 .banner {
@@ -63,8 +63,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: rgb(253, 255, 205);
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   text-align: center;
 }
 
@@ -81,7 +81,7 @@ body {
 
 .about {
   padding: 6% 15% 14% 15%;
-  background-color: rgb(90,170,154);
+  background-color: #2DA89C;
 }
 
 .about h1 {
@@ -139,12 +139,8 @@ body {
   width: 33%;
 }
 
-.container-main {
-  margin-top: 10%;
-}
-
 .specs {
-  background-color: rgb(90,170,154);
+  background-color: #2DA89C;
 }
 
 .specs-box {
@@ -193,47 +189,165 @@ body {
   color: rgba(255,255,255,0.8);
 }
 
+.container-main {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
 .form-box input[type="text"],
 .form-box input[type="password"],
 .form-box input[type="email"] {
   border-radius: 0px;
-  border-color: rgb(220,222,172);  
+  border-color: #CCCE9C;  
 }
 
 .form-box input[type="text"]:focus,
 .form-box input[type="password"]:focus,
 .form-box input[type="email"]:focus {
-  border-color: rgb(220,222,172);
+  border-color: #CCCE9C;
   box-shadow: 0px 0px;
   outline: 0 none;
 }
 
-.form-box button {
+.form-box .btn {
   width: 100%;
   padding: 1.5% 0;
   border-radius: 0px;
-  background: rgb(45,168,156);
-  border: 1px solid rgb(45,168,156);
+  background: #2DA89C;
+  border: 1px solid #2DA89C;
   outline: none;    
 }
+.btn {
+  background-color: black;
+}
 
-.form-box button:hover {
+ .form-box .btn:hover,
+.form-box .btn:active,
+.form-box .btn:focus,
+.form-box .btn:active:focus {
   background-color: rgb(25,148,136);
   border: 1px solid rgb(25,148,136);
   color: rgb(255,255,255);
+} 
+
+.form-box .btn:active,
+.form-box .btn:focus,
+.form-box .btn:active:focus {
+  outline: 0;
 }
+
+ .form-box .btn-default {
+  background-color: #CCCE9C;
+  border-color: #CCCE9C;
+  color: rgb(255, 255, 255);
+} 
+
+ .form-box .btn-default:hover {
+  background-color: rgb(180,182,132);
+  border-color: rgb(180,182,132);
+  color: rgb(255, 255, 255);
+} 
+
+.form-box .btn-default:active,
+.form-box .btn-default:focus,
+.form-box .btn-default:active:focus,
+.form-box .btn-default:active:hover {
+  background-color: rgb(180,182,132);
+  border-color: rgb(220,222, 172);
+  color: rgb(255, 255, 255);
+} 
 
 .form-box label {
   font-weight: 500;
   font-size: 16px; 
   color: rgb(30,96,117);
-  
+}
+
+.form-box a {
+  font-family: 'Heebo', sans-serif;
+  font-weight: 300;
+}
+
+.avatar {
+  width: 100%;
+  padding: 0 40% 0 0;
+}
+
+.avatar img {
+  width: 100%;
+}
+
+.input-group {
+  margin: 10% 0;
+  width: 100%;
+}
+
+.input-group .button-group {
+  width: 200%;
+  margin-bottom: 0;
+}
+
+#file_name {
+  width: 100%;
+  border-bottom: 1px solid #CCCE9C;
+  padding: 3%;
+  text-align: center;
+}
+
+.profile-box h1 {
+  font-weight: 400;
+  color: rgb(30,96,117);
+}
+
+.profile-box input[type="text"],
+.profile-box input[type="password"],
+.profile-box input[type="email"] {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  box-shadow: 0 0;  
+}
+
+.profile-box table{
+  width: 100%;
+  margin: 6% 0 3% 0;
+}
+
+.profile-box td {
+  padding-bottom: 4%;
+}
+
+.profile-box .profile-label {
+  width: 30%;
+}
+
+input[type="text"] {  
+  font-family: 'Raleway', sans-serif;
+}
+
+.profile-box label {  
+  font-size: 16px;
+}
+
+.profile-box .button-group .btn,
+.profile-box .button-group a {
+  padding: 3% 0;
+  font-size: 16px; 
+}
+
+.profile-box .button-left {
+  padding-left: 2.8%;
+  padding-right: 0%;
+}
+
+.profile-box .button-right {
+  padding-right: 2.8%;
+  padding-left: 0%;
 }
 
 div[id$="err"] {
   color: rgb(255,165,92);
 }
-
 
 .footer {
   position: absolute;
@@ -242,7 +356,7 @@ div[id$="err"] {
   padding: 1.2%;
   text-align: center;
   height: 60px;
-  background-color: rgb(220,222,172);
+  background-color: #CCCE9C;
 }
 
 .footer p{  

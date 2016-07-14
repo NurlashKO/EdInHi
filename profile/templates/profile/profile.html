@@ -4,70 +4,99 @@
 {% block title %} Profile {% endblock %}
 
 {% block content %}
-    <br><br><br><br><br>
-                <form role="form" method="POST" enctype="multipart/form-data">
-    <div class="row">
-    
-        <div class="container">
-            <div class="col-md-4">
-            {% if user.abstractuser.profile_image %}
-                <img class="img-rounded" src="{{ user.abstractuser.profile_image.url }}" alt="My Image" style="width: 200px; height: 200px;">
-            {% else %}
-                <img class="img-rounded" src="{% static "images/avatarTemp.png" %}" alt="My Image" style="width: 200px; height: 200px;">
-            {% endif %}
-                <br>
-                <h4>
-                    <b>Upload Avatar</b>
-                  <input id="image" type="file" class="" name="file">
-                </h4>
-            </div>
-            
-        <div class="col-md-6">
-            <h1> <b> Personal Information </b> </h1>
-                {% csrf_token %}
-                <h4>
-                    <b>First Name</b>
-                  <input name="firstName" type="text" class="input-lg form-control" placeholder="First name"
-                  value="{{ user.first_name }}">
-                </h4>
-                <br>
-                <h4>
-                    <b>Last Name</b>
-                  <input name="lastName" type="text" class="input-lg form-control" placeholder="Last name"
-                  value="{{ user.last_name }}">
-                </h4>
-                <br>
-                <h4>
-                    <b>University/School</b>
-                  <input name="organization" type="text" class="input-lg form-control" placeholder= "Where are you studying?"
-                  value="{{ user.abstractuser.organization }}">
-                </h4>
-                <br>
-                <h4>
-                    <b>Experience</b>
-                  <input name="experience" type="text" class="input-lg form-control" placeholder= "Which companies have you worked at?"
-                  value="{{ user.abstractuser.experience }}">
-                </h4>
-                <br>
-                <h4>
-                    <b>Phone Number</b>
-                  <input name="phoneNumber" type="text" class="input-lg form-control" placeholder= "Phone number"
-                  value="{{ user.abstractuser.phone }}">
-                </h4>
-                <br>
-                <button type="submit" class="btn btn-info">Save</button>
-                <a href="{% url "index" %}" class="btn btn-default">Back</a>
-            </form>
-            <br>
-            <!--
-            <p>Vacancies in WishList : </p>
-            {% for vacancy in user.wishlist.vacancy_set.all %}
-                <p><a href="{% url 'detail_vacancy' vacancy.id%}">{{ vacancy.name }}</a></p>
-            {% endfor %}
-            -->
-            <br>
-            <br>
-            </div>
-        </div>
-    </div>
+<div class="container">
+    <form role="form" method="POST" enctype="multipart/form-data">
+        <div class="row">
+        
+            <div class="container container-main form-box profile-box">
+                <div class="col-md-4">
+                    <div class="avatar">
+                    {% if user.abstractuser.profile_image %}
+                        <img class="img-rounded" src="{{ user.abstractuser.profile_image.url }}" alt="My Image">
+                    {% else %}
+                        <img class="img-rounded" src="{% static "images/avatarTemp.png" %}" alt="My Image">
+                    {% endif %}                    
+                        <div class="input-group">
+                            <label class="button-group ">
+                                <a class="btn btn-default">
+                                    Browse&hellip; <input type="file" style="display: none;" name="file" multiple>
+                                </a>
+                            </label>
+                            <label id="file_name">
+                                Upload avatar 
+                            </label>
+                        </div>
+                    </div>                    
+                </div>
+                
+                <div class="col-md-6">
+                    <h1> Personal Information </h1>
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <td class="profile-label">
+                                <label>First Name:</label>
+                            </td>
+                            <td class="profile-input">
+                                <input name="firstName" type="text" class="input-lg form-control" placeholder="First name" value="{{ user.first_name }}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="profile-label">
+                                <label>Last Name:</label>
+                            </td>
+                            <td class="profile-input">
+                                <input name="lastName" type="text" class="input-lg form-control" placeholder="Last name"
+                      value="{{ user.last_name }}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="profile-label">
+                                <label>University/School:</label>
+                            </td>
+                            <td class="profile-input">
+                                <input name="organization" type="text" class="input-lg form-control" placeholder= "Where are you studying?"
+                      value="{{ user.abstractuser.organization }}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="profile-label">
+                                <label>Experience:</label>
+                            </td>
+                            <td class="profile-input">
+                                <input name="experience" type="text" class="input-lg form-control" placeholder= "Which companies have you worked at?"
+                      value="{{ user.abstractuser.experience }}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="profile-label">
+                                <label>Phone Number:</label>
+                            </td>
+                            <td class="profile-input">
+                                <input name="phoneNumber" type="text" class="input-lg form-control" placeholder= "Phone number"
+                      value="{{ user.abstractuser.phone }}">
+                            </td>
+                        </tr>
+                    </table>
+                    
+                     <div class="row">
+                         <div class="col-sm-6 button-group button-left">
+                            <a href="{% url "index" %}" class="btn btn-default">Back</a>
+                         </div>
+                         <div class="col-sm-6 button-group button-right">   
+                            <button type="submit" class="btn btn-info">Save</button>
+                         </div>   
+                    </div>
+                </div>            
+            </div> 
+        </div>               
+    </form>
+    <br>
+    <!--
+    <p>Vacancies in WishList : </p>
+    {% for vacancy in user.wishlist.vacancy_set.all %}
+        <p><a href="{% url 'detail_vacancy' vacancy.id%}">{{ vacancy.name }}</a></p>
+    {% endfor %}
+    -->
+</div>      
 {% endblock %}
