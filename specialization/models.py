@@ -6,5 +6,5 @@ class Specialization(models.Model):
 	name = models.CharField(max_length=250, blank=True, default=None)
 	description = models.TextField(max_length=250, blank=True)
 	skills = models.ManyToManyField(Skill)
-	users = models.ManyToManyField(User)
+	users = models.ManyToManyField(User, blank=True)
 	in_wishlist_of_users = models.IntegerField(blank=True, null=True, default=0)
