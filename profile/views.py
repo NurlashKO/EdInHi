@@ -14,12 +14,14 @@ def profile_view(request):
             new_first_name = request.POST['firstName']
             new_last_name = request.POST['lastName']
             new_organization = request.POST['organization']
+            new_worked_at = request.POST['experience']
             new_phone_number = request.POST['phoneNumber']
 
             newUser = request.user
             newUser.first_name = new_first_name
             newUser.last_name = new_last_name
             newUser.abstractuser.organization = new_organization
+            newUser.abstractuser.worked_at = new_worked_at
             newUser.abstractuser.phone = new_phone_number
 
             if form.is_valid():

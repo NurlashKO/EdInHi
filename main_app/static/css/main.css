@@ -68,6 +68,7 @@ body {
   text-align: center;
 }
 
+
 .banner h2 {
   font-size: 80px;
   font-family: 'Raleway', sans-serif;
@@ -363,3 +364,6 @@ div[id$="err"] {
   color: rgb(255,255,255);
   text-shadow: 1.5px 1.5px 6px rgb(180,180,180);  
 }
+
+
+

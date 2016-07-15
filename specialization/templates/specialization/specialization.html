@@ -24,7 +24,17 @@
 		</div>
 		<h3> {{specialization.description}}</h3>
 
-		<a class="btn btn-primary" href=""> Добавить в Wishlist </a>
+		{%if not add%}
+		<form role="form" method="POST">
+			{% csrf_token %}
+			 <button type="submit" class="btn btn-info">Добавить в Wishlist</button>
+		 </form>
+			{%else%}
+			<form role="form" action = "{% url "delete_from_wishlist" specialization.id%}" method="POST">
+				{% csrf_token %}
+				 <button  type="submit" value="DeleteFromWishList">Удалить из Wishlist</button>
+			 </form>
+			{%endif%}
 		<h1> Скиллы требуемые для получения специализации </h1>
 
 		<div class="container">
