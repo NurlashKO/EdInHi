@@ -32,7 +32,7 @@
 			{%else%}
 			<form role="form" action = "{% url "delete_from_wishlist" specialization.id%}" method="POST">
 				{% csrf_token %}
-				 <button  type="submit" value="DeleteFromWishList">Удалить из Wishlist</button>
+				 <button  type="submit" class="btn btn-danger" value="DeleteFromWishList">Удалить из Wishlist</button>
 			 </form>
 			{%endif%}
 		<h1> Скиллы требуемые для получения специализации </h1>
