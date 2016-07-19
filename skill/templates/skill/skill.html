@@ -1,12 +1,12 @@
 {%extends 'main_app/base.html' %}
 {% block title %}
-    EdInHi
+EdInHi
 {% endblock%}
 
 {% block content %}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<div class="container">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<div class="container">
 
 	<br>
 	<br>
@@ -15,63 +15,68 @@
 
 
 	<ul class="nav nav-tabs">
-  		<li class="active"><a data-toggle="tab" href="#skill_description"> {{ skill.name }} </a></li>
-  		<li> <a data-toggle="tab" href="#video">Video Lectures</a></li>
-  		<li><a data-toggle="tab" href="#book"> Books </a></li>
+		<li class="active"><a data-toggle="tab" href="#skill_description"> {{ skill.name }} </a></li>
+		<li> <a data-toggle="tab" href="#video">Video Lectures</a></li>
+		<li><a data-toggle="tab" href="#book"> Books </a></li>
+		<li><a data-toggle="tab" href="#task"> Get Skill </a></li>
 	</ul>
 
 	<div class="tab-content">
 
-	<div id="skill_description" class="tab-pane fade in active">
-	<h3 style="margin-top:60px; text-align:center">{{skill.name}}</h3>
-	<p>
-		{% autoescape off %}
-		{{ skill.description }}
-		{% endautoescape %}
-	</p>
-	</div>
+		<div id="skill_description" class="tab-pane fade in active">
+			<h3 style="margin-top:60px; text-align:center">{{skill.name}}</h3>
+			<p>
+				{% autoescape off %}
+				{{ skill.description }}
+				{% endautoescape %}
+			</p>
+		</div>
 
-	<div id="video" class="tab-pane fade">
-	<h4 style="margin-top:60px; text-align:center">Recommended Lectures</h4>
+		<div id="video" class="tab-pane fade">
+			<h4 style="margin-top:60px; text-align:center">Recommended Lectures</h4>
 
-	<div class="container" style="text-align:center;">
-	<div class="col-md-6">
-	{% for v in skill.media_video.all %}
+			<div class="container" style="text-align:center;">
+				<div class="col-md-6">
+					{% for v in skill.media_video.all %}
 
-	<div style="text-align:center">
-		<h3>{{ v.name }}</h3>
-	<div class="embed-responsive embed-responsive-4by3">
-  		<iframe class="embed-responsive-item" src="{{ v.url }}" allowfullscreen></iframe>
-	</div>
-	<p style="text-align:center" >{{ v.description }}</p>
-	</div>
-	{% endfor %}
-</div>
-	</div>
-</div>
+					<div style="text-align:center">
+						<h3>{{ v.name }}</h3>
+						<div class="embed-responsive embed-responsive-4by3">
+							<iframe class="embed-responsive-item" src="{{ v.url }}" allowfullscreen></iframe>
+						</div>
+						<p style="text-align:center" >{{ v.description }}</p>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
 
-	<div id="book" class="tab-pane fade">
-	<h4 style="margin-top:60px; text-align:center">Recommended Books</h4>
+		<div id="book" class="tab-pane fade">
+			<h4 style="margin-top:60px; text-align:center">Recommended Books</h4>
 
-	<div class="row">
-	{% for v in skill.media_books.all %}
-  <div class="col-xs-6">
+			<div class="row">
+				{% for v in skill.media_books.all %}
+				<div class="col-xs-6">
 
-	
-    <div class="thumbnail">
-      <img src="{{ v.image }}" style="height:200px" alt="picture">
-      <div class="caption text-center">
-        <h3>{{ v.name }}</h3>
-        <p>{{ v.description }}</p>
-        <p class="text-center"><a href="{{v.url}}" class="btn btn-primary" role="button">Read</a></p>
-      </div>
-    
-    </div>
-  </div>
-  {% endfor %}
-</div>
 
-	</div>
+					<div class="thumbnail">
+						<img src="{{ v.image }}" style="height:200px" alt="picture">
+						<div class="caption text-center">
+							<h3>{{ v.name }}</h3>
+							<p>{{ v.description }}</p>
+							<p class="text-center"><a href="{{v.url}}" class="btn btn-primary" role="button">Read</a></p>
+						</div>
+
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+
+		</div>
+
+		<div id="task" class="tab-pane fade">
+			<h4 style="margin-top:60px; text-align:center"></h4>
+		</div>
 	</div>
 
 </div>
