@@ -5,7 +5,6 @@
 
 {% block content %}
 <div class="container">
-    <form role="form" method="POST" enctype="multipart/form-data">
         <div class="row">
         
             <div class="container container-main form-box profile-box">
@@ -38,7 +37,7 @@
                                 <label>First Name:</label>
                             </td>
                             <td class="profile-input">
-                                <input name="firstName" type="text" class="input-lg form-control" placeholder="First name" value="{{ user.first_name }}">
+                                <label>{{ user.first_name }}</label>
                             </td>
                         </tr>
                         <tr>
@@ -46,8 +45,7 @@
                                 <label>Last Name:</label>
                             </td>
                             <td class="profile-input">
-                                <input name="lastName" type="text" class="input-lg form-control" placeholder="Last name"
-                      value="{{ user.last_name }}">
+                                <label>{{ user.last_name }}</label>
                             </td>
                         </tr>
                         <tr>
@@ -55,8 +53,7 @@
                                 <label>Country:</label>
                             </td>
                             <td class="profile-input">
-                                <input name="country" type="text" class="input-lg form-control" placeholder= "Country where you live"
-                      value="{{ user.abstractuser.country }}">
+                                <label>{{ user.abstractuser.country }}</label>
                             </td>
                         </tr>
                         <tr>
@@ -64,8 +61,7 @@
                                 <label>City:</label>
                             </td>
                             <td class="profile-input">
-                                <input name="city" type="text" class="input-lg form-control" placeholder= "City where you live"
-                      value="{{ user.abstractuser.city }}">
+                                <label>{{ user.abstractuser.city }}</label>
                             </td>
                         </tr>
                         <tr>
@@ -73,8 +69,7 @@
                                 <label>Organization:</label>
                             </td>
                             <td class="profile-input">
-                                <input name="organization" type="text" class="input-lg form-control" placeholder= "School, university or company"
-                      value="{{ user.abstractuser.organization }}">
+                                <label>{{ user.abstractuser.organization }}</label>
                             </td>
                         </tr>
                         <tr>
@@ -82,8 +77,7 @@
                                 <label>Experience:</label>
                             </td>
                             <td class="profile-input">
-                                <input name="experience" type="text" class="input-lg form-control" placeholder= "Companies where you worked at"
-                      value="{{ user.abstractuser.worked_at }}">
+                                <label>{{ user.abstractuser.worked_at }}</label>
                             </td>
                         </tr>
                         <tr>
@@ -91,24 +85,14 @@
                                 <label>Phone Number:</label>
                             </td>
                             <td class="profile-input">
-                                <input name="phoneNumber" type="text" class="input-lg form-control" placeholder= "Phone number"
-                      value="{{ user.abstractuser.phone }}">
+                                <label>{{ user.abstractuser.phone }}</label>
                             </td>
                         </tr>
                     </table>
-                    
-                     <div class="row">
-                         <div class="col-sm-6 button-group button-left">
-                            <a href="{% url "index" %}" class="btn btn-default">Back</a>
-                         </div>
-                         <div class="col-sm-6 button-group button-right">   
-                            <button type="submit" class="btn btn-info">Save</button>
-                         </div>   
-                    </div>
+                     
                 </div>            
             </div> 
         </div>               
-    </form>
     <br>
     <!--
     <p>Vacancies in WishList : </p>

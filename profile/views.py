@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from main_app.models import AbstractUser
 from profile.forms import UploadFileForm
@@ -16,6 +16,8 @@ def profile_view(request):
             new_organization = request.POST['organization']
             new_worked_at = request.POST['experience']
             new_phone_number = request.POST['phoneNumber']
+            new_country = request.POST['country']
+            new_city = request.POST['city']
 
             newUser = request.user
             newUser.first_name = new_first_name
@@ -23,6 +25,8 @@ def profile_view(request):
             newUser.abstractuser.organization = new_organization
             newUser.abstractuser.worked_at = new_worked_at
             newUser.abstractuser.phone = new_phone_number
+            newUser.abstractuser.country = new_country
+            newUser.abstractuser.city = new_city
 
             if form.is_valid():
                 newUser.abstractuser.profile_image = request.FILES['file']
@@ -36,3 +40,7 @@ def profile_view(request):
         return redirect('profile')
     else:
         return redirect('auth')
+
+def profile_show(request, profile_id):
+    profile = get_object_or_404(User, pk=profile_id)
+    return render(request, 'profile/show.html', {'profile': profile})
