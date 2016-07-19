@@ -71,4 +71,4 @@ def company_edit_vacancy(request, pk):
 @login_required
 def all_vacancies(request):
     all = request.user.abstractuser.vacancies.all()
-    return render(request, 'vacancies.html', {'vacancies': all})
+    return render(request, 'company/vacancies.html', {'vacancies': all})

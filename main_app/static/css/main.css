@@ -14,7 +14,7 @@ html {
     font-style: normal;
 }
 
-label, a, li, 
+label, a, li,
 .btn {
   font-family: 'Heebo', sans-serif;
   font-weight: 300;
@@ -26,7 +26,7 @@ p {
 
 html h1, html h2, html h3, html h4, html h5, html h6 {
   font-family: 'Heebo', sans-serif;
-  font-weight: 300;  
+  font-weight: 300;
 }
 
 body {
@@ -40,7 +40,7 @@ body {
 }
 
 .navbar-top a {
-  color: rgb(255,255,255);  
+  color: rgb(255,255,255);
 }
 
 .navbar-top a:hover {
@@ -103,7 +103,7 @@ body {
   font-weight: 500;
 }
 
-.about p {  
+.about p {
   color: rgb(215, 255, 247);
   font-weight: 300;
 }
@@ -111,7 +111,7 @@ body {
 .icons {
   font-family: 'icon-worksregular';
   font-size: 80px;
-  color: rgb(255, 255, 255); 
+  color: rgb(255, 255, 255);
 }
 
 .company-box {
@@ -120,12 +120,12 @@ body {
 
 .companies img {
   width: 100%;
-  -webkit-filter: saturate(30%); 
+  -webkit-filter: saturate(30%);
   filter: saturate(30%);
 }
 
 .companies img:hover {
-  -webkit-filter: saturate(100%); 
+  -webkit-filter: saturate(100%);
   filter: saturate(100%);
 }
 
@@ -170,19 +170,19 @@ body {
   width: 13.8%;
   text-align: center;
   padding: 6.5% 0;
-  font-weight: 300;  
+  font-weight: 300;
   font-size: 30px;
 }
 
 .specs td {
   padding: 1%;
-  -webkit-filter: saturate(50%); 
+  -webkit-filter: saturate(50%);
   filter: saturate(50%);
 }
 
 .specs td:hover {
-  -webkit-filter: saturate(100%); 
-  filter: saturate(100%);  
+  -webkit-filter: saturate(100%);
+  filter: saturate(100%);
 }
 
 .specs a,
@@ -199,7 +199,7 @@ body {
 .form-box input[type="password"],
 .form-box input[type="email"] {
   border-radius: 0px;
-  border-color: #CCCE9C;  
+  border-color: #CCCE9C;
 }
 
 .form-box input[type="text"]:focus,
@@ -216,7 +216,7 @@ body {
   border-radius: 0px;
   background: #2DA89C;
   border: 1px solid #2DA89C;
-  outline: none;    
+  outline: none;
 }
 .btn {
   background-color: black;
@@ -229,7 +229,7 @@ body {
   background-color: rgb(25,148,136);
   border: 1px solid rgb(25,148,136);
   color: rgb(255,255,255);
-} 
+}
 
 .form-box .btn:active,
 .form-box .btn:focus,
@@ -241,13 +241,13 @@ body {
   background-color: #CCCE9C;
   border-color: #CCCE9C;
   color: rgb(255, 255, 255);
-} 
+}
 
  .form-box .btn-default:hover {
   background-color: rgb(180,182,132);
   border-color: rgb(180,182,132);
   color: rgb(255, 255, 255);
-} 
+}
 
 .form-box .btn-default:active,
 .form-box .btn-default:focus,
@@ -256,11 +256,11 @@ body {
   background-color: rgb(180,182,132);
   border-color: rgb(220,222, 172);
   color: rgb(255, 255, 255);
-} 
+}
 
 .form-box label {
   font-weight: 500;
-  font-size: 16px; 
+  font-size: 16px;
   color: rgb(30,96,117);
 }
 
@@ -306,7 +306,7 @@ body {
   border-top: none;
   border-right: none;
   border-left: none;
-  box-shadow: 0 0;  
+  box-shadow: 0 0;
 }
 
 .profile-box table{
@@ -322,18 +322,18 @@ body {
   width: 30%;
 }
 
-input[type="text"] {  
+input[type="text"] {
   font-family: 'Raleway', sans-serif;
 }
 
-.profile-box label {  
+.profile-box label {
   font-size: 16px;
 }
 
 .profile-box .button-group .btn,
 .profile-box .button-group a {
   padding: 3% 0;
-  font-size: 16px; 
+  font-size: 16px;
 }
 
 .profile-box .button-left {
@@ -360,10 +360,7 @@ div[id$="err"] {
   background-color: #CCCE9C;
 }
 
-.footer p{  
+.footer p{
   color: rgb(255,255,255);
-  text-shadow: 1.5px 1.5px 6px rgb(180,180,180);  
+  text-shadow: 1.5px 1.5px 6px rgb(180,180,180);
 }
-
-
-
