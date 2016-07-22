@@ -59,8 +59,8 @@ def quiz_submit_view(request, skill_id):
 
         #Update Skill required
 
-        #if (result >= 0.9):
-        user.abstractuser.passed_skills.add(skill)
+        if (result >= 0.9):
+            user.abstractuser.passed_skills.add(skill)
         user.save()
     print(result)
     return redirect('index')
