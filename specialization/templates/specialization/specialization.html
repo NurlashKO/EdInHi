@@ -23,19 +23,20 @@
   			</div>
 		</div>
 		<h3> {{specialization.description}}</h3>
-
-		{%if not add%}
-		<form role="form" method="POST">
-			{% csrf_token %}
-			 <button type="submit" class="btn btn-info">Добавить в Wishlist</button>
-		 </form>
-			{%else%}
-			<form role="form" action = "{% url "delete_from_wishlist" specialization.id%}" method="POST">
+		{%if request.user.is_authenticated%}
+			{%if not add%}
+			<form role="form" method="POST">
 				{% csrf_token %}
-				 <button  type="submit" class="btn btn-danger" value="DeleteFromWishList">Удалить из Wishlist</button>
+				 <button type="submit" class="btn btn-info">Добавить в Wishlist</button>
 			 </form>
-			{%endif%}
-		<h1> Скиллы требуемые для получения специализации </h1>
+				{%else%}
+				<form role="form" action = "{% url "delete_from_wishlist" specialization.id%}" method="POST">
+					{% csrf_token %}
+					 <button  type="submit" class="btn btn-danger" value="DeleteFromWishList">Удалить из Wishlist</button>
+				 </form>
+				 {%endif%}
+		{%endif%}
+			<h1> Скиллы требуемые для получения специализации </h1>
 
 		<div class="container">
     <div class="row">
