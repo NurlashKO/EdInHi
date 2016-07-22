@@ -13,7 +13,6 @@ EdInHi
 	<br>
 	<br>
 
-
 	<ul class="nav nav-tabs">
 		<li class="active"><a data-toggle="tab" href="#skill_description"> {{ skill.name }} </a></li>
 		<li> <a data-toggle="tab" href="#video">Video Lectures</a></li>
@@ -76,60 +75,61 @@ EdInHi
 
 		<div id="task" class="tab-pane fade">
 
-			<form role="form" method="POST" enctype="multipart/form-data">
+			<form role="form" method="POST" enctype="multipart/form-data" action="{% url 'quiz_submit' skill.id %}">
 				{% csrf_token %}
 			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 
 				<!-- Wrapper for slides -->
 
 				<div class="carousel-inner" role="listbox">
-					<div class="item active">
+					{%for question in skill_questions%}
+					<div class="item">
 						<div class="row">
-							<div class="col-sm-12 text-center"> 
-								<h3> 
-									The first question in quiz
+							<div class="col-sm-12 text-center">
+								<h3>
+									{{question.question}}
 								</h3>
 									<div class="control-group">
 										<!--<fieldset id="group1"> -->
 										<div class="radio">
-											<label><input type="radio" name="group1">Answer #1</label>
+											<label><input type="radio" name="group{{question.id}}" value="{{question.answer}}">{{question.answer}}</label>
 										</div>
 										<div class="radio">
-											<label><input type="radio" name="group1">Answer #2</label>
+											<label><input type="radio" name="group{{question.id}}" value="{{question.answer1}}">{{question.answer1}}</label>
 										</div>
 										<div class="radio">
-											<label><input type="radio" name="group1">Answer #3</label>
+											<label><input type="radio" name="group{{question.id}}" value="{{question.answer2}}">{{question.answer2}}</label>
 										</div>
 										<div class="radio">
-											<label><input type="radio" name="group1">Answer #4</label>
+											<label><input type="radio" name="group{{question.id}}" value="{{question.answer3}}">{{question.answer3}}</label>
 										<!-- </fieldset> -->
 									</div>
-
 
 								</div>
 							</div>
 						</div>
 					</div>
+					{%endfor%}
 
-					<div class="item">
+					<div class="item active">
 						<div class="row">
-							<div class="col-sm-12 text-center"> 
-								<h3> 
+							<div class="col-sm-12 text-center">
+								<h3>
 									The Second question in quiz
 								</h3>
 									<div class="control-group">
 										<!--<fieldset id="group2"> -->
 										<div class="radio">
-											<label><input type="radio" name="group2">Answer #1</label>
+											<label><input type="radio" name="group2000">Answer #1</label>
 										</div>
 										<div class="radio">
-											<label><input type="radio" name="group2">Answer #2</label>
+											<label><input type="radio" name="group2000">Answer #2</label>
 										</div>
 										<div class="radio">
-											<label><input type="radio" name="group2">Answer #3</label>
+											<label><input type="radio" name="group2000">Answer #3</label>
 										</div>
 										<div class="radio">
-											<label><input type="radio" name="group2">Answer #4</label>
+											<label><input type="radio" name="group2000">Answer #4</label>
 										<!-- </fieldset> -->
 									</div>
 
@@ -153,6 +153,8 @@ EdInHi
 					<span class="sr-only">Next</span>
 				</a>
 			</div>
+			<br><br><br><br>
+				 <button type="submit" class="btn btn-info">Submit</button>
 			</form>
 
 
@@ -161,12 +163,5 @@ EdInHi
 
 </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 {% endblock %}

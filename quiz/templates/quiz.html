@@ -12,7 +12,7 @@
     {% if completed == False %}
         <form method="post">
             {% csrf_token %}
-            {% for quest in quiz.question_set.all %}
+            {% for quest in quiz.questions.all %}
                 <h3>{{ quest.question }}</h3>
                 <div class="checkbox">
                     <input type="checkbox" id="c{{ quest.id }}" name="checks[]" value="{{ quest.answer_right }}"/><label for="c{{ quest.id }}">{{ quest.answer_right }}</label>
