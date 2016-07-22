@@ -27,7 +27,7 @@ class AbstractUser(models.Model):
     worked_at = models.CharField(max_length=250, null=True, blank=True, default="")
     profile_image = models.ImageField(upload_to='Images/', blank=True, null=True)
     data_of_birth = models.DateField(null=True, blank=True)
-    # passed_skills = models.ForeignKey(Skill, on_delete=models.CASCADE, null=True, blank=True)
+    passed_skills = models.ManyToManyField(Skill, blank=True)
     wishlist = models.ManyToManyField(wishSpec, blank=True)
     country = models.CharField(max_length=20, null=True, blank=True, default="")
     city = models.CharField(max_length=20, null=True, blank=True, default="")

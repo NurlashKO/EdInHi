@@ -45,6 +45,7 @@ def quiz_view(request, quiz_id):
 def quiz_submit_view(request, skill_id):
     skill = get_object_or_404(Skill, pk=skill_id)
     questions = skill.skillquestion_set.all()
+    user = request.user
     result = 0
     if request.method == "POST":
         for question in questions:
@@ -54,6 +55,12 @@ def quiz_submit_view(request, skill_id):
                 if userResult==question.answer:
                     result+=1
                 print(userResult)
-    result = result/questions.count()
+        result = result/questions.count()
+
+        #Update Skill required
+
+        #if (result >= 0.9):
+        user.abstractuser.passed_skills.add(skill)
+        user.save()
     print(result)
     return redirect('index')
