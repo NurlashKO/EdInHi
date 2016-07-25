@@ -3,12 +3,12 @@
 
 {% block title %} Company Profile {% endblock %}
 
-<body>
 {% block content %}
-    <div class="container profile">
-        <div class="row uniform">
+<body>
+    <div class="container">
+        <div class="row">
             <div class="col-sm-offset-2 col-sm-8">
-                <div class="text-image-box">
+                <div class="avatar">
                     {% if user.logo %}
                         <img src="{{ user.logo.url }}" alt="My Image" style="width: 300px; height: 300px;">
                     {% else %}
@@ -40,10 +40,10 @@
 
                 <a href="{% url "company_add_vacancy" %}" class="btn btn-default">Add Vacancy</a>
                 <a href="{% url "all_vacancies" %}" class="btn btn-default">All Vacancies - {{ vacancies }}</a>
-
+                <br><br><br><br><br>
             </div>
         </div>
     </div>
-{% endblock %}
 </body>
+{% endblock %}
 </html>

@@ -4,12 +4,31 @@
 
 {% block content %}
     <br><br><br>
-    {% for company in all_companies %}
-        <h1>{{ company.name }}</h1>
-        <a href="{% url "detail_company" company.id %}">
-                <span class="company_content">
-                    <h3>{{ company.name }}</h3>
-                </span>
-        </a>
-    {% endfor %}
+    <div class="container">
+        <div class="row">
+            {% for company in all_companies %}
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        {% if company.logo %}
+                            <img class="img-rounded" src="{{ company.logo.url }}" alt="My Image"
+                                 style="width: 200px;height: 200px;">
+                        {% else %}
+                            <img class="img-rounded" src="{{ "main_app/static/images/avatarTemp.png" }}" alt="My Image"
+                                 style="width: 200px;height: 200px;">
+                        {% endif %}
+                        <div class="caption">
+                            <h1>{{ company.name }}</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium
+                                consequuntur,
+                                dolor dolorem enim impedit incidunt necessitatibus obcaecati omnis quia recusandae
+                                soluta sunt ut
+                                voluptate voluptatum. Est fuga provident totam?</p>
+                            <p><a href="{% url "detail_company" company.id %}" role="button"
+                                  class="btn btn-primary">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

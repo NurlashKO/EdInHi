@@ -4,16 +4,29 @@
 
 {% block content %}
     <br><br><br>
-    <h1>{{ vacancy.name }}</h1>
-    <h1>Description -  {{ vacancy.description }}</h1>
-    <h1>Salary - {{ vacancy.salary }}</h1>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>{{ vacancy.name }}</h1>
+            <h3>Description - {{ vacancy.description }}</h3>
+            <h3>Salary - {{ vacancy.salary }}</h3>
+        </div>
+    </div>
 
     <br>
-    <p>Tasks : </p>
-    {% for each_task in vacancy.task.all %}
-        <h1>Task name - {{ each_task.name }}</h1>
-        <h1>Task description - {{ each_task.description }}</h1>
-        <h1>Task comment - {{ each_task.comment_to_task }}</h1>
-    {% endfor %}
-
+    <h2>Tasks : </h2>
+    <div class="container">
+        <div class="row">
+            {% for each_task in vacancy.task.all %}
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h1>{{ each_task.name }}</h1>
+                            <p>Description - {{ each_task.description }}</p>
+                            <p>Comment - {{ each_task.comment_to_task }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

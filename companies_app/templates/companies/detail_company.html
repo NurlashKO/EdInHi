@@ -4,22 +4,33 @@
 
 {% block content %}
     <br><br><br>
-    <p>{{ company.name }}</p>
-    <br>
-    <p>Current Vacancies :</p>
-    {% for vacancy in company.vacancies.all %}
-        <p>{{ vacancy.name }}</p>
+    <h1>{{ company.name }}</h1>
+    <h4>Current Vacancies :</h4>
+    <div class="container">
+        <div class="row">
+            {% for vacancy in company.vacancies.all %}
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h4>{{ vacancy.name }}</h4>
+                            <p>{{ vacancy.description }}</p>
+                            <div class="form-group">
+                                <form action="{% url "add_vacancy_user" vacancy.id %}" method="post"
+                                      style="display: inline-block;">
+                                    {% csrf_token %}
+                                    <input type="submit" value="Add to WishList">
+                                </form>
 
-        <form action="{% url "add_vacancy_user" vacancy.id %}" method="post" style="display: inline-block;">
-            {% csrf_token %}
-            <input type="submit" value="Add to WishList">
-        </form>
-
-        <form action="{% url "detail_vacancy" vacancy.id %}" method="post" style="display: inline-block;">
-            {% csrf_token %}
-            <input type="submit" value="About vacancy">
-        </form>
-
-    {% endfor %}
-
+                                <form action="{% url "detail_vacancy" vacancy.id %}" method="post"
+                                      style="display: inline-block;">
+                                    {% csrf_token %}
+                                    <input type="submit" value="About vacancy">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
