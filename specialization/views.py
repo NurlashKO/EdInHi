@@ -44,6 +44,7 @@ def specialization_view(request, pk):
                 passed+=1
         progress = int(passed/specialization.skills.all().count() * 100)
     else:
+            can_add_to_wishlist=False
             progress = 0
             passed_skills = None
     return render(request, 'specialization/specialization.html', {'passed_skills':passed_skills, 'specialization': specialization, 'progress': progress, "add" : can_add_to_wishlist,})
