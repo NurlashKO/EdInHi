@@ -3,68 +3,71 @@
 
 {% block title %}Specialization{% endblock %}
 
-{%block content%}
-<link rel="stylesheet" href="{% static "css/specialization.css" %}">
+{% block content %}
+    <link rel="stylesheet" href="{% static "css/specialization.css" %}">
 
-<br><br><br><br><br>
+    <br><br><br><br><br>
 
-<div class="row">
-	<div class="container">
-		<a href="{% url 'all_specializations' %}"> К списку специализаций </a>
-		<div class="pull-right"> Добавили в wishlist : {{ specialization.in_wishlist_of_users }}  </div>
-	</br>
-	<div class="pull-right"> Получили специализацию : {{ specialization.users.all.count}}  </div>
+    <div class="row">
+    <div class="container">
+        <a href="{% url 'all_specializations' %}"> К списку специализаций </a>
+        <div class="pull-right"> Добавили в wishlist : {{ specialization.in_wishlist_of_users }}  </div>
+        </br>
+        <div class="pull-right"> Получили специализацию : {{ specialization.users.all.count }}  </div>
 
-	<h1>{{specialization.name}}</h1>
+        <h1>{{ specialization.name }}</h1>
 
-	<div class="progress">
-		<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progress}}%;">
-			{{progress}}%
-		</div>
-	</div>
-	<h3> {{specialization.description}}</h3>
-	{%if request.user.is_authenticated%}
-	{%if not add%}
-	<form role="form" method="POST">
-		{% csrf_token %}
-		<button type="submit" class="btn btn-info">Добавить в Wishlist</button>
-	</form>
-	{%else%}
-	<form role="form" action = "{% url "delete_from_wishlist" specialization.id%}" method="POST">
-		{% csrf_token %}
-		<button  type="submit" class="btn btn-danger" value="DeleteFromWishList">Удалить из Wishlist</button>
-	</form>
-	{%endif%}
-	{%endif%}
-	<h1> Скиллы требуемые для получения специализации </h1>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ progress }}"
+                 aria-valuemin="0" aria-valuemax="100" style="width: {{ progress }}%;">
+                {{ progress }}%
+            </div>
+        </div>
+        <h3> {{ specialization.description }}</h3>
+        {% if request.user.is_authenticated %}
+            {% if not add %}
+                <form role="form" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-info">Добавить в Wishlist</button>
+                </form>
+            {% else %}
+                <form role="form" action="{% url "delete_from_wishlist" specialization.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger" value="DeleteFromWishList">Удалить из Wishlist</button>
+                </form>
+            {% endif %}
+        {% endif %}
+        <h1> Скиллы требуемые для получения специализации </h1>
 
-	<div class="container">
-		<div class="row">
-			{%  for skill in specialization.skills.all %}
-			<div class="col-sm-4 col-md-4">
-				<div class="post">
-					<div class="post-img-content">
-						<img src="{{ skill.spec_logo.url }}" class="img-responsive" />
-						{%if request.user.is_authenticated%}
-						<span class="post-title"><b>{% if skill in request.user.abstractuser.passed_skills.all %} Passed {% else %} Unpassed {% endif %}</b><br /></span>
-						{% else %}
-						<span class="post-title"><b>Unpassed</b><br /></span>
-						{% endif %}
-					</div>
-					<div class="content">
-						<div>
-							{{ skill.short_description }}
-						</div>
-						<div>
-							<a href="{% url 'skill' skill.id %}" class="btn btn-warning btn-sm">Изучить!</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			{% endfor %}
-		</div>
+        <div class="container">
+            <div class="row">
+                {% for skill in specialization.skills.all %}
+                    <div class="col-sm-4 col-md-4">
+                        <div class="post">
+                            <div class="post-img-content">
+                                <img src="{{ skill.spec_logo.url }}" class="img-responsive"/>
+                                {% if request.user.is_authenticated %}
+                                    <span class="post-title"><b>
+                                        {% if skill in request.user.abstractuser.passed_skills.all %} Passed {% else %}
+                                            Unpassed {% endif %}</b><br/></span>
+                                {% else %}
+                                    <span class="post-title"><b>Unpassed</b><br/></span>
+                                {% endif %}
+                            </div>
+                            <div class="content">
+                                <div>
+                                    {{ skill.short_description }}
+                                </div>
+                                <div>
+                                    <a href="{% url 'skill' skill.id %}" class="btn btn-warning btn-sm">Изучить!</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
 
-	</div>
-</div>
+        </div>
+    </div>
 
-{%endblock%}
+{% endblock %}
