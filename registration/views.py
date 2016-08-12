@@ -1,12 +1,9 @@
-import re
+from re import match
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-
+from django.core.mail import send_mail
 from company.models import WishList
-
-# Create your views here.
-
 
 def auth_view(request):
     if (request.method == "POST"):
@@ -17,7 +14,6 @@ def auth_view(request):
             login(request, user)
             return redirect("index")
     return render(request, "registration/auth.html")
-
 
 def reg_view(request):
     if (request.method == "POST"):
@@ -30,8 +26,10 @@ def reg_view(request):
                 return render(request, "registration/reg.html")
             else:
                 user = User.objects.create_user(username=email, email=email, password=password)
+                user.is_active = False
                 user.save()
-
+                text = 'Click to login' + '127.0.0.1:8000/authentification/?id=' + str(user.id)
+                send_email(user.email, user.id)
                 newWishlist = WishList()
                 newWishlist.user = user
                 newWishlist.save()
@@ -44,6 +42,11 @@ def reg_view(request):
     else:
         return render(request, "registration/reg.html")
 
+def  activate_view(pk, request):
+    user = User.objects.get(pk=pk)
+    user.is_active=True
+    user.save()
+    return redirect('/profile')
 
 def logout_view(request):
     logout(request)

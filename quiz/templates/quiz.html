@@ -21,7 +21,11 @@
                     <input type="checkbox" id="c3{{ quest.id }}" name="checks[]" value="{{ quest.answer3 }}"/><label for="c3{{ quest.id }}">{{ quest.answer3 }}</label>
                 </div>
             {% endfor %}
+            {% if request.user is not None %}
             <input type="submit" value="Submit">
+            {% else %}
+            <h1>You need to login</h1>
+            {% endif %}
         </form>
     {% else %}
         <h1>Quiz completed</h1>

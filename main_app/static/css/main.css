@@ -31,6 +31,7 @@ html h1, html h2, html h3, html h4, html h5, html h6 {
 
 body {
   margin-bottom: 60px;
+  overflow-x: hidden;
 }
 
 .navbar-top {
@@ -360,7 +361,7 @@ div[id$="err"] {
   background-color: #CCCE9C;
 }
 
-.footer p{
+.footer p {
   color: rgb(255,255,255);
   text-shadow: 1.5px 1.5px 6px rgb(180,180,180);
 }
