@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from main_app.models import AbstractUser
 from profile.forms import UploadFileForm
 import os
@@ -44,3 +45,8 @@ def profile_view(request):
 def profile_show(request, profile_id):
     profile = get_object_or_404(User, pk=profile_id)
     return render(request, 'profile/show.html', {'profile': profile})
+
+@login_required
+def passedSkills_view(request):
+    skills = request.user.abstractuser.passed_skills.all()
+    return render(request, 'passedSkills.html', {'skills' : skills})

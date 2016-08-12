@@ -1,0 +1,30 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %}Passed Skills{% endblock %}
+
+{% block content %}
+    <br><br><br>
+    <div class="container">
+        <div class="row">
+            {% for skill in skills %}
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        {% if skill.spec_logo %}
+                            <img class="img-rounded" src="{{ skill.spec_logo.url }}" alt="My Image"
+                                 >
+                        {% else %}
+                            <img class="img-rounded" src="{{ "main_app/static/images/avatarTemp.png" }}" alt="My Image"
+                                 style="width: 200px;height: 200px;">
+                        {% endif %}
+                        <div class="caption">
+                            <h1>{{ skill.name }}</h1>
+                            <p>{{ skill.description }}</p>
+                            <p><a href="{% url "skill" skill.id %}" role="button"
+                                  class="btn btn-primary">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

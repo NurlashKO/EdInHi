@@ -1,171 +1,154 @@
-{%extends 'main_app/base.html' %}
+{% extends 'main_app/base.html' %}
 {% block title %}
-EdInHi
-{% endblock%}
+    EdInHi
+{% endblock %}
 
 {% block content %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<div class="container">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <div class="container">
 
-	<br>
-	<br>
-	<br>
-	<br>
+        <br>
+        <br>
+        <br>
+        <br>
 
-	<ul class="nav nav-tabs">
-		<li class="active"><a data-toggle="tab" href="#skill_description"> {{ skill.name }} </a></li>
-		<li> <a data-toggle="tab" href="#video">Video Lectures</a></li>
-		<li><a data-toggle="tab" href="#book"> Books </a></li>
-		<li><a data-toggle="tab" href="#task"> Get Skill </a></li>
-	</ul>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#skill_description"> {{ skill.name }} </a></li>
+            <li><a data-toggle="tab" href="#video">Video Lectures</a></li>
+            <li><a data-toggle="tab" href="#book"> Books </a></li>
+            <li><a data-toggle="tab" href="#task"> Get Skill </a></li>
+        </ul>
 
-	<div class="tab-content">
+        <div class="tab-content">
 
-		<div id="skill_description" class="tab-pane fade in active">
-			<h3 style="margin-top:60px; text-align:center">{{skill.name}}</h3>
-			<p>
-				{% autoescape off %}
-				{{ skill.description }}
-				{% endautoescape %}
-			</p>
-		</div>
+            <div id="skill_description" class="tab-pane fade in active">
+                <h3 style="margin-top:60px; text-align:center">{{ skill.name }}</h3>
+                <p>
+                    {% autoescape off %}
+                        {{ skill.description }}
+                    {% endautoescape %}
+                </p>
+            </div>
 
-		<div id="video" class="tab-pane fade">
-			<h4 style="margin-top:60px; text-align:center">Recommended Lectures</h4>
+            <div id="video" class="tab-pane fade">
+                <h4 style="margin-top:60px; text-align:center">Recommended Lectures</h4>
 
-			<div class="container" style="text-align:center;">
-				<div class="col-md-6">
-					{% for v in skill.media_video.all %}
+                <div class="container" style="text-align:center;">
+                    <div class="col-md-6">
+                        {% for v in skill.media_video.all %}
 
-					<div style="text-align:center">
-						<h3>{{ v.name }}</h3>
-						<div class="embed-responsive embed-responsive-4by3">
-							<iframe class="embed-responsive-item" src="{{ v.url }}" allowfullscreen></iframe>
-						</div>
-						<p style="text-align:center" >{{ v.description }}</p>
-					</div>
-					{% endfor %}
-				</div>
-			</div>
-		</div>
+                            <div style="text-align:center">
+                                <h3>{{ v.name }}</h3>
+                                <div class="embed-responsive embed-responsive-4by3">
+                                    <iframe class="embed-responsive-item" src="{{ v.url }}" allowfullscreen></iframe>
+                                </div>
+                                <p style="text-align:center">{{ v.description }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
 
-		<div id="book" class="tab-pane fade">
-			<h4 style="margin-top:60px; text-align:center">Recommended Books</h4>
+            <div id="book" class="tab-pane fade">
+                <h4 style="margin-top:60px; text-align:center">Recommended Books</h4>
 
-			<div class="row">
-				{% for v in skill.media_books.all %}
-				<div class="col-xs-6">
-
-
-					<div class="thumbnail">
-						<img src="{{ v.image }}" style="height:200px" alt="picture">
-						<div class="caption text-center">
-							<h3>{{ v.name }}</h3>
-							<p>{{ v.description }}</p>
-							<p class="text-center"><a href="{{v.url}}" class="btn btn-primary" role="button">Read</a></p>
-						</div>
-
-					</div>
-				</div>
-				{% endfor %}
-			</div>
-
-		</div>
-
-		<div id="task" class="tab-pane fade">
-
-			<form role="form" method="POST" enctype="multipart/form-data" action="{% url 'quiz_submit' skill.id %}">
-				{% csrf_token %}
-			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-
-				<!-- Wrapper for slides -->
-
-				<div class="carousel-inner" role="listbox">
-					{%for question in skill_questions%}
-					<div class="item">
-						<div class="row">
-							<div class="col-sm-12 text-center">
-								<h3>
-									{{question.question}}
-								</h3>
-									<div class="control-group">
-										<!--<fieldset id="group1"> -->
-										<div class="radio">
-											<label><input type="radio" name="group{{question.id}}" value="{{question.answer}}">{{question.answer}}</label>
-										</div>
-										<div class="radio">
-											<label><input type="radio" name="group{{question.id}}" value="{{question.answer1}}">{{question.answer1}}</label>
-										</div>
-										<div class="radio">
-											<label><input type="radio" name="group{{question.id}}" value="{{question.answer2}}">{{question.answer2}}</label>
-										</div>
-										<div class="radio">
-											<label><input type="radio" name="group{{question.id}}" value="{{question.answer3}}">{{question.answer3}}</label>
-										<!-- </fieldset> -->
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-					{%endfor%}
-
-					<div class="item active">
-						<div class="row">
-							<div class="col-sm-12 text-center">
-								<h3>
-									The Second question in quiz
-								</h3>
-									<div class="control-group">
-										<!--<fieldset id="group2"> -->
-										<div class="radio">
-											<label><input type="radio" name="group2000">Answer #1</label>
-										</div>
-										<div class="radio">
-											<label><input type="radio" name="group2000">Answer #2</label>
-										</div>
-										<div class="radio">
-											<label><input type="radio" name="group2000">Answer #3</label>
-										</div>
-										<div class="radio">
-											<label><input type="radio" name="group2000">Answer #4</label>
-										<!-- </fieldset> -->
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="item">
-						<h1> 2 </h1>
-					</div>
-
-					<div class="item">
-						<h1> 3 </h1>
-					</div>
-				</div>
-
-				<!-- Left and right controls -->
-				<a class="btn btn-info" href="#myCarousel" role="button" data-slide="next">
- 					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-			<br><br><br><br>
-				{% if request.user.is_authenticated %}
-				 <button type="submit" class="btn btn-info">Submit</button>
-				{%else%}
-					<h1>You need to login</h1>
-				{%endif%}
-			</form>
+                <div class="row">
+                    {% for v in skill.media_books.all %}
+                        <div class="col-xs-6">
 
 
-		</div>
-	</div>
+                            <div class="thumbnail">
+                                <img src="{{ v.image }}" style="height:200px" alt="picture">
+                                <div class="caption text-center">
+                                    <h3>{{ v.name }}</h3>
+                                    <p>{{ v.description }}</p>
+                                    <p class="text-center"><a href="{{ v.url }}" class="btn btn-primary" role="button">Read</a>
+                                    </p>
+                                </div>
 
-</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
 
-<br>
+            </div>
+
+            <div id="task" class="tab-pane fade">
+
+                <form role="form" method="POST" enctype="multipart/form-data" action="{% url 'quiz_submit' skill.id %}">
+                    {% csrf_token %}
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+
+                        <!-- Wrapper for slides -->
+
+                        <div class="carousel-inner" role="listbox">
+                            {% for question in skill_questions %}
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="col-sm-12 text-center">
+                                            <h3>
+                                                {{ question.question }}
+                                            </h3>
+                                            <div class="control-group">
+                                                <!--<fieldset id="group1"> -->
+                                                <div class="radio">
+                                                    <label><input type="radio" name="group{{ question.id }}"
+                                                                  value="{{ question.answer }}">{{ question.answer }}
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label><input type="radio" name="group{{ question.id }}"
+                                                                  value="{{ question.answer1 }}">{{ question.answer1 }}
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label><input type="radio" name="group{{ question.id }}"
+                                                                  value="{{ question.answer2 }}">{{ question.answer2 }}
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label><input type="radio" name="group{{ question.id }}"
+                                                                  value="{{ question.answer3 }}">{{ question.answer3 }}
+                                                    </label>
+                                                    <!-- </fieldset> -->
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-sm-12 text-center">
+                                        <h3>Let's start quiz!</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="btn btn-info" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true">Next</span>
+                    </a>
+
+                    <br><br><br><br>
+
+                    {% if request.user.is_authenticated %}
+                        <button type="submit" class="btn btn-info">Submit</button>
+                    {% else %}
+                        <h1>You need to login</h1>
+                    {% endif %}
+                </form>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <br>
 {% endblock %}

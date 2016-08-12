@@ -1,8 +1,7 @@
-from re import match
+import re
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from django.core.mail import send_mail
 from company.models import WishList
 
 def auth_view(request):
@@ -28,8 +27,7 @@ def reg_view(request):
                 user = User.objects.create_user(username=email, email=email, password=password)
                 user.is_active = False
                 user.save()
-                text = 'Click to login' + '127.0.0.1:8000/authentification/?id=' + str(user.id)
-                send_email(user.email, user.id)
+
                 newWishlist = WishList()
                 newWishlist.user = user
                 newWishlist.save()
