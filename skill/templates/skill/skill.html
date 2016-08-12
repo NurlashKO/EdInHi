@@ -154,7 +154,11 @@ EdInHi
 				</a>
 			</div>
 			<br><br><br><br>
+				{% if request.user.is_authenticated %}
 				 <button type="submit" class="btn btn-info">Submit</button>
+				{%else%}
+					<h1>You need to login</h1>
+				{%endif%}
 			</form>
 
 

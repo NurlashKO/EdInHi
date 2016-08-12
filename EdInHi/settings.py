@@ -24,7 +24,6 @@ MEDIA_URL = '/Images/'
 STATIC_ROOT = os.path.join(SITE_ROOT, 'static')
 STATIC_URL = '/static/'
 
-
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
@@ -96,7 +95,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'EdInHi.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases

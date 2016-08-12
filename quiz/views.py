@@ -42,6 +42,7 @@ def quiz_view(request, quiz_id):
     return render(request, 'quiz/quiz.html', {'quiz' : quiz,
                                          'completed' : completed})
 
+@login_required
 def quiz_submit_view(request, skill_id):
     skill = get_object_or_404(Skill, pk=skill_id)
     questions = skill.skillquestion_set.all()
