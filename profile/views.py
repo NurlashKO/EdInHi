@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from main_app.models import AbstractUser
 from profile.forms import UploadFileForm
+from specialization.models import Specialization
 import os
 
 def profile_view(request):
@@ -36,7 +37,14 @@ def profile_view(request):
             newUser.abstractuser.save()
 
         else:
-            return render(request, 'profile/profile.html', {'user' : request.user})
+
+            wishlist_id = request.user.abstractuser.wishlist.all()
+            wishlist = []
+            print(wishlist_id.count())
+            if wishlist_id is not None:
+                for wish_spec in wishlist_id:
+                    wishlist.append(get_object_or_404(Specialization, pk=wish_spec.wish_spec_id))
+            return render(request, 'profile/profile.html', {'user' : request.user, 'wishlist' : wishlist})
 
         return redirect('profile')
     else:
@@ -47,6 +55,6 @@ def profile_show(request, profile_id):
     return render(request, 'profile/show.html', {'profile': profile})
 
 @login_required
-def passedSkills_view(request):
+def passed_skills_view(request):
     skills = request.user.abstractuser.passed_skills.all()
-    return render(request, 'passedSkills.html', {'skills' : skills})
+    return render(request, 'profile/passedSkills.html', {'skills' : skills})
