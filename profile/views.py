@@ -47,6 +47,6 @@ def profile_show(request, profile_id):
     return render(request, 'profile/show.html', {'profile': profile})
 
 @login_required
-def passedSkills_view(request):
+def passed_skills_view(request):
     skills = request.user.abstractuser.passed_skills.all()
-    return render(request, 'passedSkills.html', {'skills' : skills})
+    return render(request, 'profile/passedSkills.html', {'skills' : skills})

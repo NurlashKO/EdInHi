@@ -11,57 +11,72 @@
         {% block title %}
         {% endblock %}
     </title>
-    
+
     <link rel="stylesheet" href="{% static "css/main.css" %}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Heebo:400,300|Raleway:500,400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Heebo:400,300|Raleway:500,400,300' rel='stylesheet'
+          type='text/css'>
 
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
-        <nav class="navbar navbar-fixed-top navbar-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                  <a class="navbar-brand" href="{% url "index" %}">EdInHi</a>
-                </div>
-                <ul class="nav navbar-nav nav-right">
-                    {% if request.user.is_authenticated %}
-                        {% if request.user.abstractuser.is_company == True %}
-                            <li><a href="{% url "company" %}" >Company Profile</a></li>
-                        {% else %}
-                            <li><a href="{% url "all_companies" %}" >Companies</a></li>
-                            <li><a href="{% url 'all_specializations' %}">Specializations</a></li>
-                            <li><a href="{% url "profile" %}">Profile</a></li>
-                        {% endif %}
-                        <li><a href="{% url "sign_out" %}" >Sign Out</a></li>
-                    {% else %}
-                        <li class="active"><a href="{% url "reg" %}" >Sign Up</a></li>
-                        <li><a href="{% url "company_reg" %}" >Sign Up As Company</a></li>
-                        <li><a href="{% url "auth" %}">Login</a></li>
-                    {% endif %}
-                </ul>
+<nav class="navbar navbar-fixed-top navbar-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{% url "index" %}">EdInHi</a>
+        </div>
+        <ul class="nav navbar-nav nav-right">
+            {% if request.user.is_authenticated %}
+                {% if request.user.abstractuser.is_company == True %}
+                    <li><a href="{% url "company" %}">Company Profile</a></li>
+                {% else %}
+                    <li><a href="{% url "all_companies" %}">Companies</a></li>
+                    <li><a href="{% url 'all_specializations' %}">Specializations</a></li>
+                    <li><a href="{% url "profile" %}">Profile</a></li>
+                {% endif %}
+                <li><a href="{% url "sign_out" %}">Sign Out</a></li>
+            {% else %}
+                <li class="active"><a href="{% url "reg" %}">Sign Up</a></li>
+                <li><a href="{% url "company_reg" %}">Sign Up As Company</a></li>
+                <li><a href="{% url "auth" %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+
+
+{% block content %}
+{% endblock %}
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <p class="text-muted">&copy; EdInHi. All rights reserved.</p>
             </div>
-        </nav>
+            <div class="col-md-4">
+                <div class="col-md-4">
+                    <a href="{% url 'feedback' %}">Feedback</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
 
-
-        {% block content %}
-        {% endblock %}
-        
-
-        <footer class="footer">
-          <div class="container">
-            <p class="text-muted">&copy; EdInHi. All rights reserved.</p>
-          </div>
-        </footer>
-    </body>
-
-    <script src="{% static "js/file_input.js" %}"></script>
+<script src="{% static "js/file_input.js" %}"></script>
 
 </html>
