@@ -50,7 +50,7 @@ def quiz_submit_view(request, skill_id):
     result = 0
     if request.method == "POST":
         for question in questions:
-            group = "group"+str(question.id)
+            group = "group" + str(question.id)
             if group in request.POST:
                 userResult = request.POST[group]
                 if userResult==question.answer:
@@ -60,8 +60,8 @@ def quiz_submit_view(request, skill_id):
 
         #Update Skill required
 
-        if (result >= 0.9):
+        if (result >= 0.85):
             user.abstractuser.passed_skills.add(skill)
         user.save()
     print(result)
-    return redirect('index')
+    return render(request, 'quiz/quiz_submit.html', {'result' : result * 100, 'skill' : skill})
