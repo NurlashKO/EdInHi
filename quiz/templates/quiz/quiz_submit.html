@@ -1,0 +1,17 @@
+{% extends "main_app/base.html" %}
+{% load staticfiles %}
+
+{% block title %} Your Result {% endblock %}
+{% block content %}
+  <br><br><br><br><br><br><br>
+  {% if result > 85 %}
+    <h1>You have passed this {{skill.name}} skill, your result is: {{result}}%</h1>
+  {% else %}
+    <h1>You have not passed this {{skill.name}} skill, your result is: {{result}}%</h1>
+  {% endif %}
+  <div class="row">
+      <div class="col-sm-6 button-group button-left">
+          <a href="{% url 'index' %}" class="btn btn-default">Back To Main Page</a>
+      </div>
+  </div>
+{% endblock %}

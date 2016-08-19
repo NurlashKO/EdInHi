@@ -6,6 +6,7 @@ from profile.forms import UploadFileForm
 from specialization.models import Specialization
 import os
 
+@login_required
 def profile_view(request):
     if request.user.is_authenticated():
         if request.user.abstractuser.is_company == True:
