@@ -30,4 +30,5 @@ urlpatterns = [
     url(r'^task/', include('tasks.urls')),
     url(r'^quiz/', include('quiz.urls')),
     url(r'^spec/', include('specialization.urls')),
+    url(r'^feedback/', include('feedback.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,14 @@
+{% extends 'main_app/base.html' %}
+{% load staticfiles %}
+{% block title %}Feedback{% endblock %}
+
+{%block content%}
+<br><br><br><br><br><br>
+<form class="" action="{% url 'send_feedback' %}" method="POST">
+  {% csrf_token %}
+    <textarea name="text" rows="8" cols="40"></textarea>
+    <br>
+    <input type="email" name="email" value="{{request.user.email}}">
+  <button type="submit" class="btn btn-info">Save</button>
+</form>
+{%endblock%}

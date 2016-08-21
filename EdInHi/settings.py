@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'quiz',
     'companies_app',
     'specialization',
+    'feedback',
 ]
 
 MIDDLEWARE_CLASSES = [
